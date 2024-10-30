@@ -1,6 +1,6 @@
 # ValetBike
 Smith College CSC223: Software Engineering\
-Group Members: Maggie, Nafisa, Fernanda
+Group Members: Maggie, Nafisa, Fernanda, Mackenzie
 
 Starter App for ValetBike project
 
