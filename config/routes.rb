@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'bike/get_bike_id'
+  get 'bike/get_station_id'
+  get 'bike/get_station_name'
+  get 'bike/get_battery_percentage'
   # adds routes for payments
   resources :payments
   post 'payments/create'
