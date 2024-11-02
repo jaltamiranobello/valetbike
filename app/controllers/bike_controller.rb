@@ -7,7 +7,4 @@ class BikeController < ApplicationController
 
   def get_station_name
   end
-
-  def get_battery_percentage
-  end
 end
