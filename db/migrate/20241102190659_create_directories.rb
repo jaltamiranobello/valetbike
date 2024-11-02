@@ -1,6 +1,6 @@
-class CreateDirectories < ActiveRecord::Migration[7.0]
+class CreateDirectors < ActiveRecord::Migration[7.0]
   def change
-    create_table :directories do |t|
+    create_table :directors do |t|
 
       t.timestamps
     end
