@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_02_190659) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "directories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "directors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
