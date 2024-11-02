@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :payments 
   resources :trips
   #get 'trips/index'
@@ -17,9 +16,6 @@ Rails.application.routes.draw do
   get 'bike/get_battery_percentage'
   # get 'trips/new'
 
-=======
-  resources :payments
->>>>>>> ca346d1 (created payments controller, new and edit placeholder views, and edited routes file)
   
   #post 'payments/create'
   # get 'payments/success'
