@@ -8,5 +8,6 @@ class BikeController < ApplicationController
   end
 
   def get_station_name
+    self.station
   end
 end
