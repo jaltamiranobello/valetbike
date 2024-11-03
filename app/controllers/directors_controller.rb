@@ -1,5 +1,5 @@
 class DirectorsController < ApplicationController
-  def login(email:string, password:string)
+  def login (email, password)
     if verify_email(email)
       user = User.where(email:email)
       if user.password == password
@@ -16,7 +16,7 @@ class DirectorsController < ApplicationController
   def register
   end
 
-  def verify_email(email:string)
+  def verify_email(email)
     #Checks Customer database and returns true if it exits otherwise false
     inDatabase = Customer.where(email: email).first != nil ? true : false
   end
