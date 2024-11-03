@@ -1,5 +1,16 @@
 class DirectorsController < ApplicationController
-  def login
+  def login(email:string, password:string)
+    if verify_email(email)
+      user = User.where(email:email)
+      if user.password == password
+        user.loginStatus = true
+        true
+      else
+        puts "Password is not correct"
+        false
+      else
+        puts "Email not registered"
+        false
   end
 
   def register
