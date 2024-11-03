@@ -40,18 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_09_202816) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "trips", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "identifier"
-    t.integer "start_time"
-    t.integer "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "start_station_id"
-    t.integer "end_station_id"
-    t.integer "bike_used_id"
-    t.integer "customer_id"
-  end
-
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
