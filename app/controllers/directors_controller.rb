@@ -1,16 +1,23 @@
 class DirectorsController < ApplicationController
   def login (email, password)
+    # Check if email is in database 
     if email_in_database(email)
-      user = User.where(email:email)
-      if user.password == password
-        user.loginStatus = true
+      # Find Costumer with associated email 
+      costumer = Customer.where(email:email)
+      # Check if the password matches
+      if costumer.password == password
+        # Set login status 
+        costumer.loginStatus = true
         true
+      # If the password is incorrect 
       else
         puts "Password is not correct"
         false
-      else
-        puts "Email not registered"
-        false
+    # Email is not in database 
+    else
+      puts "Email not registered"
+      false
+    end 
   end
 
   def register(firstName, lastName, email, password)
