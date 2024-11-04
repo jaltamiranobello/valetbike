@@ -3,9 +3,7 @@ class DirectorsController < ApplicationController
   def new
   end
 
-  def email_in_database
-    
-  end
+
   # def login (email, password)
   #   # Check if email is in database 
   #   if email_in_database(email)
