@@ -1,2 +1,22 @@
 </div class = "access new">
 <h1> Welcome to ValetBike</h1>
+
+<p> Testing Login</p>
+<%= form_tag(directors_login_path) do %>
+    <table summary = "login">
+    <tr>
+        <th><%= label_tag(:userName) %></th>
+        <td><%= text_field_tag(:userName, params[:userName]) %></td>
+    </tr>
+    <tr>
+        <th><%= label_tag(:password) %></th>
+        <td><%= password_field_tag(:password) %></td>
+    </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Log In") %>
+    </div>
+    <%end%>
+</div>
+
