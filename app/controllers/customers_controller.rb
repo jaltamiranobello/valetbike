@@ -1,5 +1,22 @@
 class CustomersController < ApplicationController
-  def update_profile
+  # the view for this action displays the form to login 
+  def new 
+  end 
+
+  # processes the parameters of the login form to create a new Ccustomer
+  def create 
+  end 
+
+  # displays Customer data
+  def show 
+  end 
+
+  # the view for this action displays the form to edit Customer 
+  def edit 
+  end
+
+  # processes the parameters of the edit form 
+  def update 
   end
 
   def start_trip
