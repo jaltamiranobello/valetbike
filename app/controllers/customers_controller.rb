@@ -3,15 +3,15 @@ class CustomersController < ApplicationController
   def new 
   end 
 
-  # processes the parameters of the login form to create a new Ccustomer
+  # processes the parameters of the login form to set current Customer
   def create 
-    # user = User.create(pass in parameters)
-    # if user.valid? (uses validations)
+    # user = User.find_by(username: params(:username))
+    # if user password is correct 
       # then set session[:user_id] = user.id
       # send confirmation message 
       # re route to main page 
-    # else 
-      # send message that login was unsuccessful 
+    # else, user password is incorrect
+      # send error message 
   end 
 
   # displays Customer data
