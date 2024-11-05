@@ -19,6 +19,10 @@ class CustomersController < ApplicationController
   def update 
   end
 
+  # processes the deletion of account
+  def destroy
+  end 
+
   def start_trip
   end
 
