@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'directors/new'
   post 'directors/create'
 
+  get 'customers/create'
+
   #root to: "stations#index"
   root to: "directors#main"
 end

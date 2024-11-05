@@ -5,6 +5,12 @@ class CustomersController < ApplicationController
 
   # processes the parameters of the login form to set current Customer
   def create 
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      puts "success"
+    else 
+      puts "failure to create customer"
+    end
     # user = User.find_by(username: params(:username))
     # if user password is correct 
       # then set session[:user_id] = user.id
@@ -40,6 +46,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:firstName, :lastNAme, :email, :password)
+    params.require(:customer).permit(:firstName, :lastName, :email, :password)
   end
 end
