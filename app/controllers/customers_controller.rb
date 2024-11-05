@@ -38,4 +38,8 @@ class CustomersController < ApplicationController
 
   def past_trip_calculations
   end
+
+  def customer_params
+    params.require(:customer).permit(:firstName, :lastNAme, :email, :password)
+  end
 end
