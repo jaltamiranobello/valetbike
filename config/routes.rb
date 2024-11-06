@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'customers/new'
-  post 'customers/create'
+  get '/login', to:'customers#new'
+  post '/login', to:'customers#create'
   get 'customers/start_trip'
   get 'customers/end_trip'
   get 'customers/past_trip_calculations'
@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get 'users/verify_account'
   get 'users/delete_account'
 
-  get 'directors/new'
-  post 'directors/create'
+  get '/register', to:'directors#new'
+  post '/register', to:'directors#create'
 
   #root to: "stations#index"
   root to: "directors#main"
