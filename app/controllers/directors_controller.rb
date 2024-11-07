@@ -19,6 +19,9 @@ class DirectorsController < ApplicationController
     else 
       puts "Unsuccessful Registration" 
     end 
-  end 
+  end
+
+  def login
+  end
   
 end
