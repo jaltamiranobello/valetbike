@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get 'bike/get_station_name'
   get 'bike/get_battery_percentage'
   devise_for :users
-  get 'users/verify_account'
-  get 'users/delete_account'
+  
   root to: "home#index"
 end
