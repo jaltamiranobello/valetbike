@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get 'users/verify_account'
   get 'users/delete_account'
 
+  #send the register path to get the view of director new
   get '/register', to:'directors#new'
+  #send the register path to get the method director create
   post '/register', to:'directors#create'
 
   get 'customers/create'
