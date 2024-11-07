@@ -7,9 +7,9 @@ class CustomersController < ApplicationController
   def create 
     @customer = Customer.new(customer_params)
     if @customer.save
-      puts "success"
+      render('create')
     else 
-      puts "failure to create customer"
+      render('new')
     end
     # user = User.find_by(username: params(:username))
     # if user password is correct 
