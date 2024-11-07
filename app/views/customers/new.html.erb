@@ -1,12 +1,20 @@
 </div class = "access new">
 <h1> Welcome to ValetBike</h1>
 
-<p> Testing Login</p>
-<%= form_tag(login_path) do %>
-    <table summary = "login">
+<p> Testing Registration</p>
+<%= form_tag(register_path) do %>
+    <table summary = "registration">
+    <tr>
+        <th><%= label_tag(:firstName) %></th>
+        <td><%= text_field_tag(:firstName, params[:firstName]) %></td>
+    </tr>
+    <tr>
+        <th><%= label_tag(:lastName) %></th>
+        <td><%= text_field_tag(:lastName, params[:lastName]) %></td>
     <tr>
         <th><%= label_tag(:email) %></th>
         <td><%= text_field_tag(:email, params[:email]) %></td>
+    </tr>
     </tr>
     <tr>
         <th><%= label_tag(:password) %></th>
@@ -15,7 +23,7 @@
     </table>
 
     <div class="form-buttons">
-      <%= submit_tag("Log In") %>
+      <%= submit_tag("Register") %>
     </div>
     <%end%>
 </div>
