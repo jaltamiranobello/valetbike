@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  #send the login path to get the view of the customer new
   get '/login', to:'customers#new'
+  #send the login path to get the customer create method
   post '/login', to:'customers#create'
   get 'customers/start_trip'
   get 'customers/end_trip'
