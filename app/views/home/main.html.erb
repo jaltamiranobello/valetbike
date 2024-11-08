@@ -4,8 +4,8 @@
     <div class="section-title">
       Welcome to ValetBike <%= current_user.email %>
     </div> 
-    <p> MAP GOES HERE </p>
     <li><%= link_to("My Account Info", {controller: 'users', action: 'show'}) %></li> 
+    <p> MAP GOES HERE </p>
   <% else %>
     <div class="section-title"> Welcome to ValetBike!</div>
     <li><%= link_to("Sign Up", {controller: '/devise/registrations', action: 'new'}) %></li> 
