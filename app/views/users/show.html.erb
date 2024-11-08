@@ -3,5 +3,6 @@
     <div class="section-title">
       Account Information for <%= current_user.email %>
     </div> 
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
   </div>
 </div>
