@@ -8,9 +8,8 @@
     <p> Link to "Account Information" Page </p>
   <% else %>
     <div class="section-title"> Welcome to ValetBike!</div>
-    <%= button_to "Register", "devise/registrations/create"%>  
-    <%= button_to "Login", new_user_session_path %> 
-
+    <li><%= link_to("Sign Up", {controller: '/devise/registrations', action: 'new'}) %></li> 
+    <li><%= link_to("Login", {controller: '/devise/sessions', action: 'new'}) %></li> 
   <% end %>
   </div>
 </div>
