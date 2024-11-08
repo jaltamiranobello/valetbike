@@ -10,9 +10,9 @@ class DirectorsController < ApplicationController
 
   # intakes the parameters from the form to create a new Customer 
   def create 
-    user = User.create(params[:customer])
-    if user.valid?
-      session[:user_id] = user.id
+    customer = Customer.create(params[:customer])
+    if customer.valid?
+      session[:customer_id] = user.id
       # change to json messaging in the future 
       puts "Successful Registration"
       redirect_to(action: 'main') 
@@ -20,5 +20,9 @@ class DirectorsController < ApplicationController
       puts "Unsuccessful Registration" 
     end 
   end 
+
+  def customer_params
+    params.require(:customer).permit(:firstName, :lastName, :email, :password)
+  end
   
 end
