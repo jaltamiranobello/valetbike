@@ -1,12 +1,16 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
-  <!-- Welcome to Valet Bike Title -->
-  <!-- If the User is Signed In (if user_signed_in?) -->
-    <!-- Placeholder for Map-->
-    <!-- Link to "Account Information" Page -->
-  <!-- Else (If user is not signed in) -->
-    <!-- Link to Log In-->
-    <!-- Link to Register -->
-  <!-- End -->
-    </div>
+  <% if user_signed_in? %> 
+    <div class="section-title">
+      Welcome to ValetBike <%= current_user.email %>
+    </div> 
+    <p> MAP GOES HERE </p>
+    <p> Link to "Account Information" Page </p>
+  <% else %>
+    <div class="section-title"> Welcome to ValetBike!</div>
+    <%= button_to "Register", "devise/registrations/create"%>  
+    <%= button_to "Login", new_user_session_path %> 
+
+  <% end %>
+  </div>
 </div>
