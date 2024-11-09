@@ -2,9 +2,9 @@
   <div class="section-inner flexbox vertical stretch">
   <% if user_signed_in? %> 
     <div class="section-title">
-      Welcome to ValetBike <%= current_user.email %>
+      Welcome to ValetBike, <%= current_user.firstName %>
     </div> 
-    <li><%= link_to("My Account Info", {controller: 'users', action: 'show'}) %></li> 
+    <li><%= link_to("My Account Info", {controller: 'users', action: 'show'}) %></li>  
     <p> MAP GOES HERE </p>
   <% else %>
     <div class="section-title"> Welcome to ValetBike!</div>
