@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'bike/get_station_name'
   get 'bike/get_battery_percentage'
   
-  root to: "home#index"
+  root to: "home#main"
 end
