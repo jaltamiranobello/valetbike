@@ -1,0 +1,9 @@
+<div>
+  <h1 class="font-bold text-4xl">Book Your Ride</h1>
+  <% @current_station = Station.find(params[:station_id].to_i) %>
+  <% @current_bike = Bike.find(params[:bike_id].to_i) %>
+  <p>Booking from bike <@current_bike.identifier> from <%= @current_station.name%>. </p>
+  <h2>3. Confirm your card </h2>
+  <p> Card details </p>
+  <%= link_to "Update card information", card/update_payment %>
+</div>
