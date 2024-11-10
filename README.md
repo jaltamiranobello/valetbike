@@ -1,7 +1,6 @@
 # ValetBike
+Name: Nafisa Mohamed
 Smith College CSC223: Software Engineering
-Group Members: Maggie, Nafisa, Fernanda, Mackenzie, Maria Jose
-
 Starter App for ValetBike project
 
 ## Environment Configuration
