@@ -4,7 +4,7 @@ class TripController < ApplicationController
   end
 
   def calculate_time
-    get_current_trip 
+    self.get_current_trip 
     #calculates the trip length
     #I'm assuming this will result in the time in minutes
     @current_trip.start_time-@current_trip.end_time
@@ -16,8 +16,9 @@ class TripController < ApplicationController
     411*milage #calculates the emmisions in grams of Co2 for the milage in an average car (produces 411gr per mile)
   end
 
-  def get_current_trip
+  def self.get_current_trip
     # assigns @current_trip to the trip matching the id in params
     @current_trip = Trip.find(params[:trip_id].to_i)
   end
+
 end

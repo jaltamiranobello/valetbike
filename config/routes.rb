@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   get 'bike/get_battery_percentage'
   get 'users/verify_account'
   get 'users/delete_account'
+  get 'trip/index'
+  get 'trip/book'
+  get 'trip/pay'
+  get 'trip/confirmation'
   root to: "stations#index"
 end
