@@ -1,3 +1,5 @@
+<div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
+  <%= station.identifier %>: <%= station.name %> (<%= station.address %>)<%= station.docked_bikes.count%>
 <div class="record-row  flexbox vertical stretch">
   <%= station.name %> <br> Total Bikes:<%= station.docked_bikes.count%>
   <% @identifier = station.identifier %>
