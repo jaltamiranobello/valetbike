@@ -204,6 +204,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
+    stripe (13.1.1)
     strscan (3.0.4)
     tailwindcss-rails (2.0.12-arm64-darwin)
       railties (>= 6.0.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  stripe
   tailwindcss-rails
   turbo-rails
   tzinfo-data
