@@ -14,6 +14,8 @@
 }
 
 .page-section .section-title {
+  color : deeppink;
+  background-color: pink;
   font-family: var(--title-font);
   font-weight: 500;
   font-size: 2.5em;
