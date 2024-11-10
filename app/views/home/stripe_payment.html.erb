@@ -1,0 +1,42 @@
+<%= form_with url: payments_url do |f| %>
+    <div class="card-header">
+      <strong>Credit Card</strong>
+      <small>enter your card details</small>
+    </div>
+  
+    <div class="card-body">
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <%= f.number_field :amount, class: 'form-control', id: 'amount', min: 0, placeholder: 'Enter your amount in $' %>
+      </div>
+  
+      <div class="form-group">
+        <label for="ccnumber">Credit Card Number</label>
+        <%= f.text_field :card_number, class: 'form-control', id: 'cardNumber', placeholder: '0000 0000 0000 0000' %>
+      </div>
+  
+      <div class="form-group">
+        <label for="ccmonth">Month</label>
+        <%= f.text_field :month, class: 'form-control', id: 'ccmonth', placeholder: 'MM' %>
+      </div>
+  
+      <div class="form-group">
+        <label for="ccyear">Year</label>
+        <%= f.text_field :year, class: 'form-control', id: 'ccyear', placeholder: 'YY' %>
+      </div>
+  
+      <div class="form-group">
+        <label for="cvv">CVV/CVC</label>
+        <%= f.text_field :cvc, class: 'form-control', id: 'cvv', placeholder: '123' %>
+      </div>
+    </div>
+  
+    <div class="card-footer">
+      <%= button_to new_payment_path class: 'btn btn-sm btn-success float-right' do %>
+        <i class="mdi mdi-gamepad-circle"></i> Continue
+      <% end %>
+      <%= link_to root_path, class: 'btn btn-sm btn-danger' do %>
+        <i class="mdi mdi-lock-reset"></i> Reset
+      <% end %>
+    </div>
+  <% end %>
