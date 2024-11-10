@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-
+  # adds routes for payments
+  resources :payments
+  post 'payments/create'
+  get 'payments/success'
+  get 'payments/cancel'
+  # adds devise routes for Users 
   devise_for :users
 
   get 'users/show'
