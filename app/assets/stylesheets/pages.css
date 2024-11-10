@@ -3,37 +3,182 @@
 /************************************/
 
 .page-section {
-  max-width: 80em;
   width: 100%;
-  margin-top: 4em;
 }
 
-.page-section .section-inner {
-  margin-right: 1.4em;
-  margin-left: 1.4em;
+/************************************/
+/*       Welcome Page               */
+/************************************/
+.landing-page {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
 }
 
-.page-section .section-title {
-  color : deeppink;
-  background-color: pink;
-  font-family: var(--title-font);
-  font-weight: 500;
-  font-size: 2.5em;
-  margin-bottom: 1em;
+.top-section {
+  position: relative;
+  background-color: #fbe0e4;
+  padding: 20px;
+  min-height: 100vh; 
+  width: 100vw; 
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center; 
+  overflow: hidden;
 }
 
-.record-row {
-  padding: 0.5em 1.25em 0.5em 1.25em;
-  font-size: 0.85em;
-  line-height: 1.75em;
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw; 
+  padding: 3%;
 }
 
-.record-row.even {
-  background: var(--medium-white-color);
+.title {
+  font-size: 2.5rem;
+  color: #ff0055;
+  font-weight: bold;
 }
 
-.record-row.odd {
-  background: var(--dark-white-color);
+.login-button {
+  border: 1px solid #333;
+  padding: 14px 40px;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*       Main Content           */
+.main-content {
+  max-width: 60%;
+  text-align: left; 
+  margin-left: 40px; 
+}
+
+.tagline {
+  font-size: 3.8rem;
+  color: #ff0055;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.get-started-button {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background-image: url('<%= asset/images("background-girl-bike.png") %>'); 
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.right-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%; 
+  height: auto;
+}
+
+.right-image img {
+  width: 100%; 
+  height: auto;
+}
+
+/*       Lower Section       */
+.lower-section {
+  background-color: #ffffff;
+  border: solid;
+}
+
+.call-to-action {
+  width: 100vw;
+  height: 50vw;
+  text-align: center;
+  margin-bottom: 40px;
+  border: solid;
+}
+
+.call-to-action h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  width: 100vw;
+  height: 50vw;
+}
+
+.cta-content img {
+  width: 200px;
+  height: auto;
+}
+
+
+/*       How To Ride          */
+.how-to-ride {
+  text-align: center;
+  background-color: #ffccd5;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100vh;
+  width: 100vw;
+  border: solid;
+}
+
+.how-to-ride h2 {
+  font-size: 1.8rem;
+  color: #ff0055;
+  margin-bottom: 20px;
+}
+
+.ride-tips {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tip {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tip img {
+  width: 60%;
+  height: auto;
 }
 
 

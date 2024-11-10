@@ -1,19 +1,82 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
+  
+<!-- Main Page -->
+
   <% if user_signed_in? %> 
+
+  <header class="header">
+  <h1 class="title">VALET BIKE.</h1>
+  <button class="login-button"><li><%= link_to("Log In", {controller: '/devise/sessions', action: 'new'}) %></li> </button>
+  </header>
+
     <div class="section-title">
       Welcome to ValetBike, <%= current_user.firstName %>
     </div> 
     <li><%= link_to("My Account Info", {controller: 'users', action: 'show'}) %></li>  
     <h3>MAP OF STATIONS</h3>
     <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:500px;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Northampton,+MA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embedded-map-code" href="https://kbj9qpmy.com/hrn" id="auth-map-data">InMotion Hosting</a><style>#my-map-canvas img{max-height:none;max-width:none!important;background:none!important;}</style></div>
+  
+<!-- Welcome Page -->
+
   <% else %>
-    <div class="section-title"> Welcome to ValetBike!</div>
-    <p style="font-size:50px; color:deeppink; font-family:Impact"> SO LET'S RIDE!</p>
-    <p style="font-size:25px;"> Ready to ride? We've got you covered. </p>
-    <p style="font-size:15px;"> Whether you're exploring for the weekend or commuting daily, we've got the perfect ride to fit your needs </p>
-    <li><%= link_to("Sign Up", {controller: '/devise/registrations', action: 'new'}) %></li> 
-    <li><%= link_to("Login", {controller: '/devise/sessions', action: 'new'}) %></li> 
+    <div class="landing-page">
+    <!-- Top Section -->
+    <div class="top-section">
+    
+      <header class="header">
+        <h1 class="title">VALET BIKE.</h1>
+        <button class="login-button"><li><%= link_to("Log In", {controller: '/devise/sessions', action: 'new'}) %></li> </button>
+      </header>
+  
+      <div class="main-content">
+        <h2 class="tagline">SO LET'S RIDE!</h2>
+        <p class="description">
+          Ready to ride? We've got you covered. <br>
+          Whether you're exploring for the weekend or commuting daily,
+          we've got the perfect ride to fit your needs!
+        </p>
+        <button class="get-started-button"><li><%= link_to("Get Started", {controller: '/devise/registrations', action: 'new'}) %></li> </button>
+      </div>
+
+      <div class="right-image">
+      <img src="<%= asset_path('girl-bike.gif') %>" alt="Girl on a bike"> 
+      </div>
+  
+      <div class="background-image"></div> 
+      </div>
+  
+    <!-- Lower Section -->
+    
+    <div class="lower-section">
+      <!-- Call to Action -->
+      <div class="call-to-action">
+        <h2>CALL TO ACTION</h2>
+        <div class="cta-content">
+          <img src="<%= asset_path('placeholder-image.png') %>" alt="Placeholder Image">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, magna nec placerat varius, lacus nunc venenatis nisi, et congue ipsum dolor id orci. Fusce eget ipsum vel lacus convallis cursus. Etiam non risus eu ligula aliquam faucibus. Curabitur sit amet mauris et leo scelerisque ultrices.</p>
+        </div>
+      </div>
+  
+      <!-- How to Ride 101 -->
+      <div class="how-to-ride">
+        <h2>HOW TO RIDE 101</h2>
+        <div class="ride-tips">
+          <div class="tip">
+            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
+          </div>
+          <div class="tip">
+            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
+          </div>
+          <div class="tip">
+            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <% end %>
   </div>
 </div>

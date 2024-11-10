@@ -1,13 +1,23 @@
-class CardController < ApplicationController
+class Card < ApplicationRecord
+  # Example methods for the Card model
+
+  # Remove the card instance
   def remove_card
+    destroy
   end
 
-  def update_payment
+  # Verify the card
+  def verify
+    update(verified: true)
   end
 
-  def verify_payment
-  end
-
-  def pay
+  # Process a payment
+  def pay(amount)
+    if card_balance >= amount
+      update(card_balance: card_balance - amount)
+      true
+    elses
+      false
+    end
   end
 end
