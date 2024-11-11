@@ -176,6 +176,55 @@
   justify-content: center;
 }
 
+/* Registration Page */
+.top-registration {
+  position: relative;
+  background-color: #78a4eb;
+  padding: 20px;
+  min-height: 100vh; 
+  width: 100vw; 
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center; 
+  overflow: hidden;
+}
+
+.title-registration{
+ font-family: 'monaco', monospace;
+ font-size: 2.0rem;
+ font-weight: bold;
+ color: white;
+ position: left;
+}
+
+.form-registration{
+  width: 25vw; 
+  padding: 20px;
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  background-color: #1f4a91;
+}
+
+.registration-field{
+  color: white
+}
+
+.signup-button{
+  border: 1px solid white;
+  padding: 14px 40px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'monaco', monospace;
+  margin-top: 20px;
+  width: 205px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
 .tip img {
   width: 60%;
   height: auto;

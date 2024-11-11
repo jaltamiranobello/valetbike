@@ -1,26 +1,28 @@
-<div class="section-title">
-      Sign Up for ValetBike
+<div class = "top-registration">
+<div class = "form-registration">
+<div class="title-registration">
+      SIGN UP & RIDE!
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="registration-field">
   <%= f.label "First Name" %><br />
   <%= f.text_field :firstName, autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="registration-field">
   <%= f.label "Last Name" %><br />
   <%= f.text_field :lastName, autofocus: true %>
   </div>
   
-  <div class="field">
+  <div class="registration-field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="registration-field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -28,12 +30,16 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <button class="get-started-button">
+  <!-- <button class="get-started-button"> -->
+  <div class = "registration-field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </button>
+  <!-- </button> -->
+  </div>
 
-  <div class="actions">
+  <div class="signup-button">
     <%= f.submit "Sign Up" %>
   </div>
 <% end %>
+</div>
+</div>
