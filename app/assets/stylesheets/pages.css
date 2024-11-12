@@ -135,7 +135,8 @@
 }
 
 .form-registration{
-  width: 25vw; 
+  text-align: center;
+  width: 30vw; 
   padding: 20px;
   position: absolute;
   top: 100px;
@@ -163,6 +164,7 @@
   width: 205px;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-left: 65px;
 }
 
 
