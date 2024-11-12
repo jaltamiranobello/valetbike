@@ -3,6 +3,18 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <!-- Added First Name and Last Name but don't actually update -->
+  <div class = "field">
+  <%= f.label "New First Name" %> <i>(leave blank if you don't want to change it)</i> <br />
+  <%= f.text_field :firstName, autofocus: true %>
+  </div>
+
+  <div class = "field">
+  <%= f.label "New Last Name" %> <i>(leave blank if you don't want to change it)</i> <br />
+  <%= f.text_field :lastName, autofocus: true %>
+  </div>
+  <!-- End of name update but need to update database ->>
+
   <div class="field">
     <%= f.label "New Email" %> <i>(leave blank if you don't want to change it)</i> <br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
