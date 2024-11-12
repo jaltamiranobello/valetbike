@@ -140,7 +140,7 @@
   padding: 20px;
   position: absolute;
   top: 100px;
-  right: 200px;
+  right: 100px;
   background-color: #1f4a91;
 }
 
@@ -165,6 +165,14 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-left: 95px;
+}
+
+.registration-image{
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  width: 100%; 
+  height: 100%;
 }
 
 .tip img {
