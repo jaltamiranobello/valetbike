@@ -9,17 +9,23 @@
 
   <div class="registration-field">
   <%= f.label "First Name" %><br />
+  <div class = "registration-input" >
   <%= f.text_field :firstName, autofocus: true %>
+  </div>
   </div>
 
   <div class="registration-field">
   <%= f.label "Last Name" %><br />
+  <div class = "registration-input">
   <%= f.text_field :lastName, autofocus: true %>
+  </div
   </div>
   
   <div class="registration-field">
     <%= f.label :email %><br />
+    <div class = "registration-input">
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
   </div>
 
   <div class="registration-field">
@@ -27,13 +33,17 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
+    <div class = "registration-input" >
     <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
   </div>
 
   <!-- <button class="get-started-button"> -->
   <div class = "registration-field">
     <%= f.label :password_confirmation %><br />
+    <div class = "registration-input">
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
   <!-- </button> -->
   </div>
 
