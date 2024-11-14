@@ -182,6 +182,117 @@
   position: absolute;
 }
 
+/* Account & Settings */
+
+.pink-header{
+  background-color: #ffccd5;
+  font-family: 'monaco', monospace;
+  color: #ff0055;
+  font-size: 3.0rem;
+  font-weight: bold;
+  height: 10vh;
+  width: 100vw;
+  text-align: center; 
+}
+
+.white-page{
+  height: 200vh;
+  width: 100vw;
+}
+
+.header-bike-image{
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  width: 5%; 
+  height: 10%;
+}
+
+.dropdown-image{
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  width: 3%; 
+  height: 5%;
+}
+
+.black-text{
+  font-family: 'monaco', monospace;
+  color: black;
+  font-size: 3.0rem;
+  font-weight: bold;
+  position: relative;
+  left: 30px;
+}
+
+.membership-button{
+  border: 1px solid #1f4a91;
+  padding: 14px 40px;
+  background-color: #1f4a91;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  left: 40px;
+  
+}
+
+.trip-button{
+  border: 1px solid #1f4a91;
+  padding: 14px 40px;
+  background-color: #1f4a91;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  left: 80px;
+}
+
+.profile-info{
+  position: relative;
+  left: 120px;
+  top: 20px;
+  border-radius: 100px;
+  background-color: #fbe0e4;
+  height: 65vh;
+  width: 80vw;
+  text-align: center;
+}
+
+.pink-title{
+  font-family: 'monaco', monospace;
+  color: #ff0055;
+  font-size: 2.0rem;
+  font-weight: bold;
+}
+
+.delete-account-button{
+  border: 1px solid #1f4a91;
+  padding: 14px 40px;
+  color: white;
+  background-color: #1f4a91;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 200px;
+  position: relative;
+  top: 50px;
+  left: 40px;
+}
+
+.logout-button{
+  text-align: center;
+  border: 1px solid #1f4a91;
+  padding: 14px 40px;
+  color: white;
+  background-color: #1f4a91;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 200px;
+  position: relative;
+  top: 0px;
+  left: 275px;
+}
+
 .tip img {
   width: 60%;
   height: auto;
