@@ -1,18 +1,28 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
+<<<<<<< HEAD
 
 <!-- Main Page -->
 
 <% if user_signed_in? %>
+=======
+
+  <% if user_signed_in? %>
+>>>>>>> 1a24de8 (Update Main View and other views)
 
   <!-- Header Section -->
   <div class="mainpage-header">
     <div class="mainpage-logo">
+<<<<<<< HEAD
       <%= image_tag "bikeLogo.png", alt: "ValetBike Logo" %>
+=======
+      <img src="/path/to/logo.png" alt="ValetBike Logo">
+>>>>>>> 1a24de8 (Update Main View and other views)
     </div>
 
     <nav class="mainpage-nav-menu">
       <ul>
+<<<<<<< HEAD
         <li><%= link_to("Rent a Bike", {controller: 'users', action: 'show'}) %></li>
       </ul>
     </nav>
@@ -65,36 +75,149 @@
 
  
 <!-- Welcome Page -->
+=======
+        <li><%= link_to("Home", root_path) %></li>
+        <li><%= link_to("My Account", {controller: 'users', action: 'show'}) %></li>
+        <li><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
+      </ul>
+    </nav>
+>>>>>>> 1a24de8 (Update Main View and other views)
 
-  <% else %>
-    <div class="landing-page">
-    <!-- Top Section -->
-    <div class="top-section">
-    
-      <header class="header">
-        <h1 class="title">VALET BIKE.</h1>
-        <button class="login-button"><%= link_to("Log In", {controller: '/devise/sessions', action: 'new'}) %> </button>
-      </header>
-  
-      <div class="main-content">
-        <h2 class="tagline">SO LET'S RIDE!</h2>
-        <p class="description">
-          Ready to ride? We've got you covered. <br>
-          Whether you're exploring for the weekend or commuting daily,
-          we've got the perfect ride to fit your needs!
-        </p>
-        <button class="get-started-button"><%= link_to("Get Started", {controller: '/devise/registrations', action: 'new'}) %> </button>
+    <div class="mainpage-account-info">
+      Logged in as: <%= current_user.firstName %> (<%= current_user.email %>)
+    </div>
+
+<<<<<<< HEAD
+          <div class="right-image">
+            <img src="<%= asset_path('girl-bike.gif') %>" alt="Girl on a bike">
+          </div>
+=======
+    <button class="mainpage-menu-btn">
+      <span class="mainpage-menu-icon">☰</span>
+    </button>
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="mainpage-welcome">
+    <h1>Welcome to ValetBike, <%= current_user.firstName %></h1>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="mainpage-content">
+    <!-- Map and Search Sections -->
+    <div class="mainpage-map-search-container">
+      
+      <!-- Map Section -->
+      <div class="mainpage-map-container">
+        <h3 class="mainpage-map-title">MAP OF STATIONS</h3>
+        <div class="mainpage-map-wrapper">
+          <div id="my-map-canvas" class="mainpage-map-canvas">
+            <iframe 
+              class="mainpage-map-iframe" 
+              frameborder="0" 
+              src="https://www.google.com/maps/embed/v1/place?q=Northampton,+MA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+            </iframe>
+          </div>
+        </div>
+        <a class="mainpage-map-credit" href="https://kbj9qpmy.com/hrn" id="auth-map-data">InMotion Hosting</a>
+        <div class="mainpage-current-ride">
+          <span class="mainpage-current-ride-label">CURRENT RIDE:</span>
+          <span class="mainpage-current-ride-timer">10:00</span>
+        </div>
       </div>
+
+      <!-- Search Section -->
+      <div class="mainpage-search">
+        <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
+        <div class="mainpage-search-box">
+          <input type="text" placeholder="Enter location" class="mainpage-search-input">
+          <button class="mainpage-search-clear-btn">×</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+>>>>>>> 1a24de8 (Update Main View and other views)
+
+        </div>
+
+<<<<<<< HEAD
+        <!-- Lower Section -->
+        <div class="lower-section">
+        
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Welcome Page -->
+    <% else %>
+
+      <div class="landing-page">
+        <!-- Top Section -->
+        <div class="top-section">
+          <header class="header">
+            <h1 class="title">VALET BIKE.</h1>
+            <button class="login-button">
+              <%= link_to("Log In", {controller: '/devise/sessions', action: 'new'}) %>
+            </button>
+          </header>
+
+          <div class="main-content">
+            <h2 class="tagline">SO LET'S RIDE!</h2>
+            <p class="description">
+              Ready to ride? We've got you covered. <br>
+              Whether you're exploring for the weekend or commuting daily,
+              we've got the perfect ride to fit your needs!
+            </p>
+            <button class="get-started-button">
+              <%= link_to("Get Started", {controller: '/devise/registrations', action: 'new'}) %>
+            </button>
+          </div>
 
           <div class="right-image">
             <img src="<%= asset_path('girl-bike.gif') %>" alt="Girl on a bike">
           </div>
 
+          <div class="background-image"></div> 
+
         </div>
 
         <!-- Lower Section -->
         <div class="lower-section">
-        
+>>>>>>> 1a24de8 (Update Main View and other views)
           <!-- Call to Action -->
           <div class="call-to-action">
             <h2>Join Us in What Matters Most: Our Community, Our Environment, and YOU.</h2>
@@ -105,7 +228,10 @@
             </div>
           </div>
 
+<<<<<<< HEAD
           <!-- How To Ride -->
+=======
+>>>>>>> 1a24de8 (Update Main View and other views)
           <div class="how-to-ride">
             <h2>How to Ride 101</h2>
             <div class="ride-steps">

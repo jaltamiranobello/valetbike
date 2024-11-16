@@ -1,14 +1,21 @@
+<<<<<<< HEAD
 
 <%= render "devise/shared/links" %>
 
 <div class="outer-container">
   <div class="image-section">
     <%= image_tag "login-image.jpg", alt: "Person on a bike" %>
+=======
+<div class="outer-container">
+  <div class="image-section">
+    <%= image_tag "background-girl-bike.png", alt: "Person on a bike" %>
+>>>>>>> 1a24de8 (Update Main View and other views)
   </div>
 
   <div class="login-form-container">
     <div class="login-form-inner-container">
       <h2>Welcome!</h2>
+<<<<<<< HEAD
       <h3>Sign in to your account</h3>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
@@ -29,6 +36,28 @@
 
 
 <% end %>
+=======
+      <p>Sign in to your account</p>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.email_field :email, placeholder: "hello@reallygreatsite.com", autofocus: true, autocomplete: "email", class: "input-field" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password", class: "input-field" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Login", class: "login-button" %>
+        </div>
+
+        <%= link_to "Forgot Password?", new_password_path(resource_name), class: "forgot-password" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+>>>>>>> 1a24de8 (Update Main View and other views)
 
 <%= render "devise/shared/links" %>
 

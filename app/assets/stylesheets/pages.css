@@ -449,9 +449,260 @@ body {
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 /***********************************/
 /*         Registration Page       */
 /***********************************/
+=======
+/************************************/
+/*       Main Page                  */
+/************************************/
+
+/* General Layout */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Header Styles */
+.mainpage-header {
+  background-color: #ffccd5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.mainpage-logo img {
+  height: 50px;
+}
+
+/* Navigation Menu */
+.mainpage-nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.mainpage-nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.mainpage-nav-menu li {
+  font-size: 1rem;
+}
+
+.mainpage-nav-menu a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #003366;
+}
+
+.mainpage-nav-menu a:hover {
+  color: #ff3366;
+}
+
+/* Account Info */
+.mainpage-account-info {
+  font-size: 0.9rem;
+  color: #003366;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Menu Button (for Mobile) */
+.mainpage-menu-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+.mainpage-menu-icon {
+  color: #003366;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .mainpage-nav-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mainpage-nav-menu.active {
+    display: flex; /* Show menu on toggle */
+  }
+
+  .mainpage-menu-btn {
+    display: block; /* Show the menu button */
+  }
+}
+
+
+/* Welcome Section */
+.mainpage-welcome {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.mainpage-welcome h1 {
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.mainpage-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mainpage-nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.mainpage-nav li a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+}
+
+/* Content Section */
+.mainpage-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Map Section */
+.mainpage-map-container {
+  flex: 1 1 45%;
+  position: relative;
+  border: 2px solid #00ff00; /* Matches the reference */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.mainpage-map-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.mainpage-map-wrapper {
+  width: 100%;
+  height: 300px; /* Adjust to match the map size */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mainpage-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.mainpage-current-ride {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #003366;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.mainpage-current-ride-timer {
+  font-family: 'Digital', monospace;
+  font-size: 1.2rem;
+}
+
+/* Search Section */
+.mainpage-search {
+  flex: 1 1 45%;
+  border: 2px solid #00ff00; /* Matches the reference */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.mainpage-search-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.mainpage-search-box {
+  position: relative;
+  margin-top: 10px;
+}
+
+.mainpage-search-input {
+  width: calc(100% - 40px);
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.mainpage-search-clear-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ccc;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .mainpage-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainpage-map-container,
+  .mainpage-search {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+/************************************/
+/*       REgistration Page           */
+/************************************/
+
+>>>>>>> 1a24de8 (Update Main View and other views)
 .top-registration {
   position: relative;
   background-color: #78a4eb;
