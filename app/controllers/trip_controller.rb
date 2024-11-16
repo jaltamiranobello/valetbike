@@ -146,5 +146,4 @@ class TripController < ApplicationController
   def real_trip_id?(trip_id)
     Trip.exists?(trip_id)
   end
-
 end
