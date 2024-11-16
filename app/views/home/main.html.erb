@@ -4,6 +4,9 @@
 <!-- Main Page -->
 
 <% if user_signed_in? %>
+<!-- Main Page -->
+
+<% if user_signed_in? %>
 
   <!-- Header Section -->
   <div class="mainpage-header">
@@ -19,7 +22,7 @@
 
     <div class="mainpage-account-info">
        <ul>
-          <li><%= link_to("My Account", {controller: '/devise/registrations', action: 'edit'}) %></li>
+          <li><%= link_to("My Account", {controller: 'users', action: 'show'}) %></li>
        </ul>
     </div>
   </div>
