@@ -1,21 +1,66 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
 
-    <!-- Main Page -->
-    <% if user_signed_in? %>
+<!-- Main Page -->
 
-  <header class="header">
-  <h1 class="title">VALET BIKE.</h1>
-  <button class="login-button"><li><%= link_to("Log In", {controller: '/devise/sessions', action: 'new'}) %></li> </button>
-  </header>
+<% if user_signed_in? %>
 
-    <div class="section-title">
-      Welcome to ValetBike, <%= current_user.firstName %>
-    </div> 
-    <li><%= link_to("My Account Info", {controller: '/devise/registrations', action: 'edit'}) %></li>  
-    <h3>MAP OF STATIONS</h3>
-    <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:500px;height:500px;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Northampton,+MA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embedded-map-code" href="https://kbj9qpmy.com/hrn" id="auth-map-data">InMotion Hosting</a><style>#my-map-canvas img{max-height:none;max-width:none!important;background:none!important;}</style></div>
-  
+  <!-- Header Section -->
+  <div class="mainpage-header">
+    <div class="mainpage-logo">
+      <%= image_tag "bikeLogo.png", alt: "ValetBike Logo" %>
+    </div>
+
+    <nav class="mainpage-nav-menu">
+      <ul>
+        <li><%= link_to("Rent a Bike", {controller: 'users', action: 'show'}) %></li>
+      </ul>
+    </nav>
+
+    <div class="mainpage-account-info">
+       <ul>
+          <li><%= link_to("My Account", {controller: 'users', action: 'show'}) %></li>
+       </ul>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="mainpage-welcome">
+    <h1>Welcome to ValetBike, <%= current_user.firstName %></h1>
+  </div>
+
+  <!-- Map and Search Section -->
+  <div class="mainpage-map-search-container">
+    
+    <!-- Map Section -->
+    <div class="mainpage-map-container">
+      <h3 class="mainpage-map-title">MAP OF STATIONS</h3>
+      <div class="mainpage-map-wrapper">
+        <iframe 
+          class="mainpage-map-iframe" 
+          frameborder="0" 
+          src="https://www.google.com/maps/embed/v1/place?q=Northampton,+MA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+        </iframe>
+      </div>
+      <div class="mainpage-current-ride">
+        <span>CURRENT RIDE: </span><span>10:00</span>
+      </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="mainpage-search">
+      <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
+      <div class="mainpage-search-box">
+        <input type="text" placeholder="Enter location" class="mainpage-search-input">
+        <button class="mainpage-search-clear-btn">×</button>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+ 
 <!-- Welcome Page -->
 
   <% else %>
