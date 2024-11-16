@@ -1,0 +1,10 @@
+<div>
+  <h1 class="font-bold text-4xl">Ride On!</h1>
+  <p>Your ride has been confirmed! Make sure to familiarize yourself with your bike and its safety features before you hit the road. </p>
+  <p>Ride time as of last refresh:<p>
+    <% trip_id = params[:trip_id].to_i%>
+    <% trip_length = get_current_length_of_active_trip(trip_id) %>
+    <% hours = trip_length.div(60) %>
+    <% minutes = trip_length - (hours*60)%>
+  <%= hours.to_s + ":" + minutes.to_s %>
+</div>
