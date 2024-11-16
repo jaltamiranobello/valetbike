@@ -382,6 +382,9 @@
   text-align: center;
 }
 
+.registration-field{
+  color: black
+}
 .pink-title{
   font-family: 'monaco', monospace;
   color: #ff0055;
@@ -503,10 +506,6 @@
 .forgot-password-form {
   width: 100%;
   max-width: 350px;
-}
-
-.field {
-  margin-bottom: 15px;
 }
 
 .input-field {
