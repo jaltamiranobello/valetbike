@@ -1,4 +1,5 @@
 class Station < ApplicationRecord
+
   validates_presence_of    :identifier,
                            :name,
                            :address

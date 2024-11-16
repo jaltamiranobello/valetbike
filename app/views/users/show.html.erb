@@ -1,0 +1,10 @@
+<div class="page-section flexbox vertical stretch">
+  <div class="section-inner flexbox vertical stretch">
+    <div class="section-title">
+      Account Information: <%= current_user.firstName %> <%= current_user.lastName %>
+    </div> 
+    <li><%= link_to("Edit Account Information", {controller: '/devise/registrations', action: 'edit'}) %></li>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+    <%= link_to "Back", :back %>
+    </div>
+</div>
