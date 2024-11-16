@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get 'users/delete_account'
   get 'trip/index'
   get 'trip/book'
-  get 'trip/pay'
-  get 'trip/confirmation'
+  get 'trip/confirm'
+  
   root to: "stations#index"
 
   get "stations/show"
