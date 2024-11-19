@@ -125,6 +125,7 @@
 
 .cta-content img {
   max-width: 40%;
+
 }
 
 /* How To Ride */
@@ -183,6 +184,42 @@
 .step p {
   color: #333;
   font-size: 1.2rem;
+}
+
+/* Frequently Asked Question */
+
+.faq-content {
+  gap: 20px;
+  margin: 0 auto;
+  width: 100vw;
+  height: auto;
+  padding: 5%;
+  font-size: xx-large;
+}
+
+.accordion {
+  background-color: #eee;
+  border: solid;
+  border: 3px;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }
 
 /***********************************/
@@ -406,7 +443,9 @@ body {
   box-sizing: border-box;
 }
 
-/* Registration Page */
+/***********************************/
+/*         Registration Page       */
+/***********************************/
 .top-registration {
   position: relative;
   background-color: #78a4eb;

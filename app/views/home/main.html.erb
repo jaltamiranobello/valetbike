@@ -83,37 +83,98 @@
         <button class="get-started-button"><%= link_to("Get Started", {controller: '/devise/registrations', action: 'new'}) %> </button>
       </div>
 
-      <div class="right-image">
-      <img src="<%= asset_path('girl-bike.gif') %>" alt="Girl on a bike"> 
-      </div>
-  
-      <div class="background-image"></div> 
-      </div>
-  
-    <!-- Lower Section -->
-    
-    <div class="lower-section">
-      <!-- Call to Action -->
-      <div class="call-to-action">
-        <h2>CALL TO ACTION</h2>
-        <div class="cta-content">
-          <img src="<%= asset_path('placeholder-image.png') %>" alt="Placeholder Image">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, magna nec placerat varius, lacus nunc venenatis nisi, et congue ipsum dolor id orci. Fusce eget ipsum vel lacus convallis cursus. Etiam non risus eu ligula aliquam faucibus. Curabitur sit amet mauris et leo scelerisque ultrices.</p>
+          <div class="right-image">
+            <img src="<%= asset_path('girl-bike.gif') %>" alt="Girl on a bike">
+          </div>
+
         </div>
-      </div>
-  
-      <!-- How to Ride 101 -->
-      <div class="how-to-ride">
-        <h2>HOW TO RIDE 101</h2>
-        <div class="ride-tips">
-          <div class="tip">
-            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
+
+        <!-- Lower Section -->
+        <div class="lower-section">
+        
+          <!-- Call to Action -->
+          <div class="call-to-action">
+            <h2>Join Us in What Matters Most: Our Community, Our Environment, and YOU.</h2>
+            <div class="cta-content">
+              <img src="<%= asset_path('placeholder-image.jpg') %>" alt="Placeholder Image">
+              <p>Hop on and join our mission to build stronger communities, protect the environment, and help riders make a positive impact with every trip. <br>
+                Together, we can make every journey count!</p>
+            </div>
           </div>
-          <div class="tip">
-            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
+
+          <!-- How To Ride -->
+          <div class="how-to-ride">
+            <h2>How to Ride 101</h2>
+            <div class="ride-steps">
+              <div class="step">
+                <%= image_tag "icon-join.jpg", alt: "Join Icon", class: "step-icon" %>
+                <h3>JOIN</h3>
+                <p>Download the app or visit the website to sign up. <br>
+                Choose a membership or pay-as-you-go plan.<br>
+                Verify your details and activate your account.</p>
+              </div>
+              <div class="step">
+                <%= image_tag "icon-rent.jpg", alt: "Rent Icon", class: "step-icon" %>
+                <h3>RENT</h3>
+                <p>Unlock your bike with the app. <br> Give the bike a quick inspection to ensure it is ready to ride.<br> Take a moment to read through bike safety guidelines before you start your journey.</p>
+              </div>
+              <div class="step">
+                <%= image_tag "icon-ride.jpg", alt: "Ride Icon", class: "step-icon" %>
+                <h3>RIDE</h3>
+                <p><b>Enjoy the Ride! </b> <br> Make the most of your trip by keeping it within the allowed time limit to avoid any extra fees. <br>
+                  Remember: The timer continues running even when you stop, so plan accordingly!
+                </p>
+              </div>
+              <div class="step">
+                <%= image_tag "icon-park.JPG", alt: "Park Icon", class: "step-icon" %>
+                <h3>PARK</h3>
+                <p>End your trip by parking at a designated hub. <br>
+                Confirm the bike is securely parked in the app to complete your ride.</p>
+              </div>
+            </div>
           </div>
-          <div class="tip">
-            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
+
+          <div class="lower-section">
+        
+          <!-- FAQ Section -->
+          <div class="call-to-action">
+            <h2>Frequenly Asked Questions</h2>
+            
+            <div class="faq-content">
+            <button class="accordion">Section 1</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Section 2</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <button class="accordion">Section 3</button>
+            <div class="panel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                  panel.style.display = "none";
+                } else {
+                  panel.style.display = "block";
+                }
+              });
+            }
+            </script>
+            <!-- Code from https://www.w3schools.com/howto/howto_js_accordion.asp -->
+            </div>
+
           </div>
 
         </div>
@@ -122,4 +183,3 @@
     <% end %>
   </div>
 </div>
-
