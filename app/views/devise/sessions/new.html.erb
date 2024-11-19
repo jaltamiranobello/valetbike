@@ -1,30 +1,39 @@
+
+<%= render "devise/shared/links" %>
+
 <div class="outer-container">
   <div class="image-section">
-    <%= image_tag "background-girl-bike.png", alt: "Person on a bike" %>
+    <%= image_tag "login-image.jpg", alt: "Person on a bike" %>
   </div>
 
   <div class="login-form-container">
     <div class="login-form-inner-container">
       <h2>Welcome!</h2>
-      <p>Sign in to your account</p>
+      <h3>Sign in to your account</h3>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.email_field :email, placeholder: "hello@reallygreatsite.com", autofocus: true, autocomplete: "email", class: "input-field" %>
+          <%= f.email_field :email, placeholder: "hello@valetbike.com", autofocus: true, autocomplete: "email", class: "input-field" %>
         </div>
 
-        <div class="field">
-          <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password", class: "input-field" %>
-        </div>
-
-        <div class="actions">
-          <%= f.submit "Login", class: "login-button" %>
-        </div>
-
-        <%= link_to "Forgot Password?", new_password_path(resource_name), class: "forgot-password" %>
-      <% end %>
-    </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-</div>
 
+  <!--
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+  --> 
+
+  <button class="login-button">
+    <%= f.submit value: "Log in" %>
+  </button>
+<% end %>
 
 <%= render "devise/shared/links" %>
+
+

@@ -1,29 +1,27 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
 
-  <% if user_signed_in? %>
+<!-- Main Page -->
+
+<% if user_signed_in? %>
 
   <!-- Header Section -->
   <div class="mainpage-header">
     <div class="mainpage-logo">
-      <img src="/path/to/logo.png" alt="ValetBike Logo">
+      <%= image_tag "bikeLogo.png", alt: "ValetBike Logo" %>
     </div>
 
     <nav class="mainpage-nav-menu">
       <ul>
-        <li><%= link_to("Home", root_path) %></li>
-        <li><%= link_to("My Account", {controller: 'users', action: 'show'}) %></li>
-        <li><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
+        <li><%= link_to("Rent a Bike", {controller: 'users', action: 'show'}) %></li>
       </ul>
     </nav>
 
     <div class="mainpage-account-info">
-      Logged in as: <%= current_user.firstName %> (<%= current_user.email %>)
+       <ul>
+          <li><%= link_to("My Account", {controller: '/devise/registrations', action: 'edit'}) %></li>
+       </ul>
     </div>
-
-    <button class="mainpage-menu-btn">
-      <span class="mainpage-menu-icon">☰</span>
-    </button>
   </div>
 
   <!-- Welcome Section -->
@@ -31,153 +29,91 @@
     <h1>Welcome to ValetBike, <%= current_user.firstName %></h1>
   </div>
 
-  <!-- Main Content Section -->
-  <div class="mainpage-content">
-    <!-- Map and Search Sections -->
-    <div class="mainpage-map-search-container">
-      
-      <!-- Map Section -->
-      <div class="mainpage-map-container">
-        <h3 class="mainpage-map-title">MAP OF STATIONS</h3>
-        <div class="mainpage-map-wrapper">
-          <div id="my-map-canvas" class="mainpage-map-canvas">
-            <iframe 
-              class="mainpage-map-iframe" 
-              frameborder="0" 
-              src="https://www.google.com/maps/embed/v1/place?q=Northampton,+MA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
-            </iframe>
-          </div>
-        </div>
-        <a class="mainpage-map-credit" href="https://kbj9qpmy.com/hrn" id="auth-map-data">InMotion Hosting</a>
-        <div class="mainpage-current-ride">
-          <span class="mainpage-current-ride-label">CURRENT RIDE:</span>
-          <span class="mainpage-current-ride-timer">10:00</span>
-        </div>
+  <!-- Map and Search Section -->
+  <div class="mainpage-map-search-container">
+    
+    <!-- Map Section -->
+    <div class="mainpage-map-container">
+      <h3 class="mainpage-map-title">MAP OF STATIONS</h3>
+      <div class="mainpage-map-wrapper">
+        <iframe 
+          class="mainpage-map-iframe" 
+          frameborder="0" 
+          src="https://www.google.com/maps/embed/v1/place?q=Northampton,+MA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+        </iframe>
       </div>
-
-      <!-- Search Section -->
-      <div class="mainpage-search">
-        <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
-        <div class="mainpage-search-box">
-          <input type="text" placeholder="Enter location" class="mainpage-search-input">
-          <button class="mainpage-search-clear-btn">×</button>
-        </div>
+      <div class="mainpage-current-ride">
+        <span>CURRENT RIDE: </span><span>10:00</span>
       </div>
-
     </div>
+
+    <!-- Search Section -->
+    <div class="mainpage-search">
+      <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
+      <div class="mainpage-search-box">
+        <input type="text" placeholder="Enter location" class="mainpage-search-input">
+        <button class="mainpage-search-clear-btn">×</button>
+      </div>
+    </div>
+    
   </div>
 
 
 
+ 
+<!-- Welcome Page -->
 
+  <% else %>
+    <div class="landing-page">
+    <!-- Top Section -->
+    <div class="top-section">
+    
+      <header class="header">
+        <h1 class="title">VALET BIKE.</h1>
+        <button class="login-button"><%= link_to("Log In", {controller: '/devise/sessions', action: 'new'}) %> </button>
+      </header>
+  
+      <div class="main-content">
+        <h2 class="tagline">SO LET'S RIDE!</h2>
+        <p class="description">
+          Ready to ride? We've got you covered. <br>
+          Whether you're exploring for the weekend or commuting daily,
+          we've got the perfect ride to fit your needs!
+        </p>
+        <button class="get-started-button"><%= link_to("Get Started", {controller: '/devise/registrations', action: 'new'}) %> </button>
+      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Welcome Page -->
-    <% else %>
-
-      <div class="landing-page">
-        <!-- Top Section -->
-        <div class="top-section">
-          <header class="header">
-            <h1 class="title">VALET BIKE.</h1>
-            <button class="login-button">
-              <%= link_to("Log In", {controller: '/devise/sessions', action: 'new'}) %>
-            </button>
-          </header>
-
-          <div class="main-content">
-            <h2 class="tagline">SO LET'S RIDE!</h2>
-            <p class="description">
-              Ready to ride? We've got you covered. <br>
-              Whether you're exploring for the weekend or commuting daily,
-              we've got the perfect ride to fit your needs!
-            </p>
-            <button class="get-started-button">
-              <%= link_to("Get Started", {controller: '/devise/registrations', action: 'new'}) %>
-            </button>
-          </div>
-
-          <div class="right-image">
-            <img src="<%= asset_path('girl-bike.gif') %>" alt="Girl on a bike">
-          </div>
-
-          <div class="background-image"></div> 
-
+      <div class="right-image">
+      <img src="<%= asset_path('girl-bike.gif') %>" alt="Girl on a bike"> 
+      </div>
+  
+      <div class="background-image"></div> 
+      </div>
+  
+    <!-- Lower Section -->
+    
+    <div class="lower-section">
+      <!-- Call to Action -->
+      <div class="call-to-action">
+        <h2>CALL TO ACTION</h2>
+        <div class="cta-content">
+          <img src="<%= asset_path('placeholder-image.png') %>" alt="Placeholder Image">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat, magna nec placerat varius, lacus nunc venenatis nisi, et congue ipsum dolor id orci. Fusce eget ipsum vel lacus convallis cursus. Etiam non risus eu ligula aliquam faucibus. Curabitur sit amet mauris et leo scelerisque ultrices.</p>
         </div>
-
-        <!-- Lower Section -->
-        <div class="lower-section">
-          <!-- Call to Action -->
-          <div class="call-to-action">
-            <h2>Join Us in What Matters Most: Our Community, Our Environment, and YOU.</h2>
-            <div class="cta-content">
-              <img src="<%= asset_path('placeholder-image.jpg') %>" alt="Placeholder Image">
-              <p>Hop on and join our mission to build stronger communities, protect the environment, and help riders make a positive impact with every trip. <br>
-                Together, we can make every journey count!</p>
-            </div>
+      </div>
+  
+      <!-- How to Ride 101 -->
+      <div class="how-to-ride">
+        <h2>HOW TO RIDE 101</h2>
+        <div class="ride-tips">
+          <div class="tip">
+            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
           </div>
-
-          <div class="how-to-ride">
-            <h2>How to Ride 101</h2>
-            <div class="ride-steps">
-              <div class="step">
-                <%= image_tag "icon-join.jpg", alt: "Join Icon", class: "step-icon" %>
-                <h3>JOIN</h3>
-                <p>Download the app or visit the website to sign up. <br>
-                Choose a membership or pay-as-you-go plan.<br>
-                Verify your details and activate your account.</p>
-              </div>
-              <div class="step">
-                <%= image_tag "icon-rent.jpg", alt: "Rent Icon", class: "step-icon" %>
-                <h3>RENT</h3>
-                <p>Unlock your bike with the app. <br> Give the bike a quick inspection to ensure it is ready to ride.<br> Take a moment to read through bike safety guidelines before you start your journey.</p>
-              </div>
-              <div class="step">
-                <%= image_tag "icon-ride.jpg", alt: "Ride Icon", class: "step-icon" %>
-                <h3>RIDE</h3>
-                <p><b>Enjoy the Ride! </b> <br> Make the most of your trip by keeping it within the allowed time limit to avoid any extra fees. <br>
-                  Remember: The timer continues running even when you stop, so plan accordingly!
-                </p>
-              </div>
-              <div class="step">
-                <%= image_tag "icon-park.JPG", alt: "Park Icon", class: "step-icon" %>
-                <h3>PARK</h3>
-                <p>End your trip by parking at a designated hub. <br>
-                Confirm the bike is securely parked in the app to complete your ride.</p>
-              </div>
-            </div>
+          <div class="tip">
+            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
+          </div>
+          <div class="tip">
+            <img src="<%= asset_path('icon-placeholder.png') %>" alt="Icon Placeholder">
           </div>
 
         </div>
@@ -186,3 +122,4 @@
     <% end %>
   </div>
 </div>
+
