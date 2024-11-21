@@ -1,6 +1,12 @@
 class TripController < ApplicationController
   helper_method :start_trip, :end_trip, :get_current_length_of_active_trip, :calculate_duration, :calculate_emmisions
 
+  def new 
+  end 
+
+  def create 
+  end 
+  
   def index
     @trips = Trip.all.order(identifier: :desc)
   end
