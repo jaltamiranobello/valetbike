@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'bike/get_station_name'
   get 'bike/get_battery_percentage'
   # adds routes for payments
-  resources :payments
+  resources :payment
   post 'payments/create'
   get 'payments/success'
   get 'payments/cancel'
@@ -29,8 +29,8 @@ Rails.application.routes.draw do
   get 'users/verify_account'
   get 'users/delete_account'
   
+  resources :trip
   get 'trip/index'
-  get 'trip/book'
   get 'trip/confirm'
  
   root to: "home#main"
