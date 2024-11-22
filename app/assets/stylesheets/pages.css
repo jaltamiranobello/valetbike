@@ -742,27 +742,12 @@ body {
 /* Submit Button */
 .submit-button {
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  background-color: #0066cc; /* Solid blue button */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 4em;
 }
 
-.submit-button:hover {
-  background-color: #004d99; /* Slightly darker blue on hover */
-}
-
-/* Minimal Links */
-.forgot-password-container a {
-  font-size: 0.9rem;
-  color: #0066cc;
-  text-decoration: none;
-  margin-top: 15px;
+.page-section .section-inner {
+  margin-right: 1.4em;
+  margin-left: 1.4em;
 }
 
 .forgot-password-container a:hover {
@@ -811,6 +796,7 @@ body {
 .bookRide-change-station {
   background-color: #007bff;
   color: white;
+  border-radius: 25px;
 }
 
 .bookRide-primary {
