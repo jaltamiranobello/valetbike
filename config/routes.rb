@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'payments/new'
-  get 'payments/create'
+  resources :payments 
   resources :trips
   # get 'trips/new'
   # get 'trips/create'
