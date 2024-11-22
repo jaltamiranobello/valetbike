@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'trips/new'
+  get 'trips/create'
 
   get 'card/remove_card'
   get 'card/update_payment'
