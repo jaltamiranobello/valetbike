@@ -22,18 +22,13 @@
 
 .record-row {
   padding: 0.5em 1.25em 0.5em 1.25em;
-  font-size: 0.85em;
+  font-size: 0.70em;
   line-height: 1.75em;
   border-radius: 25px;
+  background: #ffd1dc;
 }
 
-.record-row.even {
-  background: var(--medium-white-color);
-}
 
-.record-row.odd {
-  background: var(--dark-white-color);
-}
 
 
 /***********************************/
@@ -50,4 +45,24 @@
     margin-bottom: .6em;
   }
 
+}
+
+
+.grid-container {
+  display: grid;
+  gap: 50px 100px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgb(244, 239, 243);
+  border: 1px solid rgba(0,0,0,0);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.center-section-title{
+  text-align: center;
 }
