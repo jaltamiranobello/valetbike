@@ -4,13 +4,24 @@
        <%= @current_station.name %>  current bikes
     </div>  
     <div class="flexbox vertical stretch">
-      <% if @stations.present? %>
-        <%= render(partial: "stations/row", collection: @stations, as: :station) %>
+      <%if @current_station.docked_bikes.present? %>
+        <!-- make the stations like button shaped -->
+        <div class="grid-item">
+        <div class="grid-container">
+        
+       
+        <%= render(partial: "bikes/row", collection: @bikes, as: :bike) %>
+     
+        
+        </div>
+        </div>
       <% else %>
-      <div class="empty">
-        No stations found.
-      </div>
+        <div class="empty">
+          No stations found.
+        </div>
       <% end %>
+
+
     </div>
 	</div>
 </div>
