@@ -778,7 +778,7 @@ body {
   margin-bottom: 10px;
 }
 
-.record-row {
+.station-button {
   padding: 0.5em 1.25em 0.5em 1.25em;
   font-size: 0.70em;
   line-height: 1.75em;
@@ -789,10 +789,22 @@ body {
   background: var(--medium-white-color);
 }
 
-.record-row.odd {
-  background: var(--dark-white-color);
+/* SHOW STATIONS PAGE */
+.stations-title{
+  background-color: #ffccd5;
+  font-family: 'monaco', monospace;
+  color: #ff0055;
+  font-size: 3.0rem;
+  font-weight: bold;
+  height: 10vh;
+  width: 100vw;
+  text-align: center;
 }
 
+.stations-page{
+  height: 100vh;
+  width: 100vw;
+}
 
 /***********************************/
 /*         Responsiveness          */
