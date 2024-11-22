@@ -700,34 +700,19 @@ body {
   box-shadow: none;
 }
 
-/* Submit Button */
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  background-color: #0066cc; /* Solid blue button */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.record-row {
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.85em;
+  line-height: 1.75em;
+  border-radius: 25px;
 }
 
-.submit-button:hover {
-  background-color: #004d99; /* Slightly darker blue on hover */
+.record-row.even {
+  background: var(--medium-white-color);
 }
 
-/* Minimal Links */
-.forgot-password-container a {
-  font-size: 0.9rem;
-  color: #0066cc;
-  text-decoration: none;
-  margin-top: 15px;
-}
-
-.forgot-password-container a:hover {
-  text-decoration: underline;
+.record-row.odd {
+  background: var(--dark-white-color);
 }
 
 
