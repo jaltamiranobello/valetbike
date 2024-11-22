@@ -2,11 +2,11 @@
   <h1 class="font-bold text-4xl">Book Your Ride</h1>
   <p>To change your station update the id number in the url.</p>
   <h2>1. Chose a bike </h2>
-  <%= form_with do |f|%>
+  <%= form_for @trip do |f|%>
     <%= f.label "Please enter a bike ID" %>
-    <%= f.text_field :bike_id %>
+    <%= f.text_field :bike_used %>
     <%= f.label "Please enter a station ID" %>
-    <%= f.text_field :station_id %>
+    <%= f.text_field :start_station_id %>
     <%= f.submit "Continue to Payment"%>
     <%end%>
 </div>
