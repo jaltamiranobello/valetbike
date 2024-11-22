@@ -78,7 +78,7 @@ group :test do
 end
 
 # Developer Added Gems
-gem 'dotenv-rails'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Suggested Potentially Useful Gems
 # gem 'devise'
