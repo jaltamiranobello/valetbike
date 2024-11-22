@@ -778,72 +778,21 @@ body {
   margin-bottom: 10px;
 }
 
-.bookRide-station-name {
-  font-weight: bold;
-  color: #007bff;
-}
-
-.bookRide-btn {
-  display: inline-block;
-  margin: 10px 0;
-  padding: 10px 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.bookRide-change-station {
-  background-color: #007bff;
-  color: white;
+.record-row {
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.70em;
+  line-height: 1.75em;
   border-radius: 25px;
 }
 
-.bookRide-primary {
-  background-color: #4caf50;
-  color: white;
+.record-row.even {
+  background: var(--medium-white-color);
 }
 
-.bookRide-secondary {
-  background-color: #ffc107;
-  color: black;
+.record-row.odd {
+  background: var(--dark-white-color);
 }
 
-.bookRide-form-group {
-  margin-bottom: 15px;
-}
-
-.bookRide-form-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.bookRide-form-input {
-  width: 50%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.bookRide-button-group {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.bookRide-step {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.bookRide-instructions {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #555;
-}
 
 /***********************************/
 /*         Responsiveness          */
@@ -858,4 +807,24 @@ body {
     font-size: 1.9em;
     margin-bottom: .6em;
   }
+}
+
+
+.grid-container {
+  display: grid;
+  gap: 50px 100px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgb(244, 239, 243);
+  border: 1px solid rgba(0,0,0,0);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.center-section-title{
+  text-align: center;
 }
