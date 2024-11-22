@@ -1,0 +1,28 @@
+<div class="page-section flexbox vertical stretch">
+  <div class="section-inner flexbox vertical stretch">
+    <div class="section-title">
+       <%= @bike.identifier %>  current bikes
+    </div>  
+    <div class="flexbox vertical stretch">
+      <%if @bike.present? %>
+        <!-- make the bikes like button shaped -->
+        <div class="grid-item">
+        <div class="grid-container">
+        
+       
+        <%= render(partial: "bikes/row", collection: @bikes, as: :bike) %>
+     
+        
+        </div>
+        </div>
+      <% else %>
+        <div class="empty">
+          No stations found.
+        </div>
+      <% end %>
+
+
+    </div>
+	</div>
+</div>
+
