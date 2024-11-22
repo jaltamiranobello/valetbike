@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get "stations/show"
 
+  
+
 
   get 'bikes/index'
   get 'bikes/show'
