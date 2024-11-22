@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_09_202816) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_09_202527) do
   create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "identifier"
     t.integer "current_station_id"
@@ -49,7 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_09_202816) do
     t.integer "start_station_id"
     t.integer "end_station_id"
     t.integer "bike_used_id"
-    t.integer "customer_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -61,7 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_09_202816) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "firstName"
-    t.string "lastName"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
