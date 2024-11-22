@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'payments/new'
+  get 'payments/create'
   resources :trips
   # get 'trips/new'
   # get 'trips/create'
@@ -13,11 +15,10 @@ Rails.application.routes.draw do
   get 'bike/get_station_name'
   get 'bike/get_battery_percentage'
 
-  # adds routes for payments
-  resources :payment
-  post 'payments/create'
-  get 'payments/success'
-  get 'payments/cancel'
+  
+  #post 'payments/create'
+  # get 'payments/success'
+  # get 'payments/cancel'
   # adds devise routes for Users 
   devise_for :users
 
