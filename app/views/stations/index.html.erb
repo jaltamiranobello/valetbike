@@ -1,11 +1,26 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
     <div class="section-title">
-      Welcome to ValetBike, we are happy to help!
+      <!-- center the title -->
+      <div class="center-section-title">
+        Available stations
+      </div>
+
     </div>  
     <div class="flexbox vertical stretch">
       <% if @stations.present? %>
+
+        <!-- make the stations like button shaped -->
+        <div class="grid-item">
+        <div class="grid-container">
+        
+       
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
+     
+        
+        </div>
+        </div>
+
       <% else %>
       <div class="empty">
         No stations found.
