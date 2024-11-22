@@ -1,12 +1,12 @@
 <div>
   <h1 class="font-bold text-4xl">Book Your Ride</h1>
-  <% @current_station = Station.find(params[:station_id].to_i) %>
-  <p>Booking from <%= @current_station.name%></p>
   <p>To change your station update the id number in the url.</p>
   <h2>1. Chose a bike </h2>
   <%= form_with do |f|%>
     <%= f.label "Please enter a bike ID" %>
     <%= f.text_field :bike_id %>
+    <%= f.label "Please enter a station ID" %>
+    <%= f.text_field :station_id %>
     <%= f.submit "Continue to Payment"%>
     <%end%>
 </div>
