@@ -20,13 +20,23 @@
   margin-bottom: 1em;
 }
 
-.station-button {
+.record-row {
+  background-color: #ed8dade5;
+  border: none;
   padding: 0.5em 1.25em 0.5em 1.25em;
   font-size: 0.70em;
   line-height: 1.75em;
-  border-radius: 25px;
-  background: #ffd1dc;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
 }
+
+.record-row:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 
 /* SHOW STATIONS PAGE */
 .stations-title{
@@ -71,7 +81,6 @@
 
 .grid-item {
   background-color: rgb(244, 239, 243);
-  border: 1px solid rgba(0,0,0,0);
   padding: 20px;
   font-size: 30px;
   text-align: center;
