@@ -4,7 +4,7 @@ class BikesController < ApplicationController
   end
 
   def show
-    @bike = Bike.find(params[:id])
+    @bike = Bike.find_by(current_station_id: params[:current_station_id])
   end
 
   
