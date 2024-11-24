@@ -7,7 +7,9 @@ class TripsController < ApplicationController
     @trip = Trip.new
     trip_success = initalize_trip(params[:station_id].to_i, params[:bike_id].to_i, current_user.id)
     unless trip_success == nil
-      redirect_to trips_path
+      if @trip.save 
+        redirect_to trips_path
+      end
     else
       # The 'new' action is NOT being called here
       # Assign any instance variables needed
