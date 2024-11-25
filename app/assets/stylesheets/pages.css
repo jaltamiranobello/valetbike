@@ -20,8 +20,9 @@
   margin-bottom: 1em;
 }
 
+/* this is for the station button */
 .record-row {
-  background-color: #ed8dade5;
+  background-color: #d73f72e5;
   border: none;
   padding: 0.5em 1.25em 0.5em 1.25em;
   font-size: 0.70em;
@@ -29,12 +30,24 @@
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   border-radius: 12px;
 }
 
 .record-row:hover{
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* this is for the show button */
+.record-row2 {
+  background-color: #e089a6e5;
+  border: solid white;
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.70em;
+  line-height: 1.75em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
 }
 
 
@@ -84,7 +97,7 @@
   padding: 20px;
   font-size: 30px;
   text-align: center;
-}
+} 
 
 .center-section-title{
   text-align: center;
