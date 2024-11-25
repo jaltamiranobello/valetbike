@@ -1,3 +1,5 @@
 <div class="record-row  flexbox vertical stretch">
   <%= station.name %> <br> <%= station.docked_bikes.count%>
+  <%= link_to "<button class='record-row2'>Show</button>".html_safe, stations_show_path, class: 'action show' %>
+        
 </div>
