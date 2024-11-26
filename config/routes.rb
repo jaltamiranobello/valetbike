@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
 
   get "stations/show"
+  get "stations/index"
 
 
   get 'bikes/index'
