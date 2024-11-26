@@ -50,6 +50,22 @@
   border-radius: 12px;
 }
 
+.return-stations-button {
+    background-color: #d73f72e5;
+    border: none;
+    padding: 0.5em 1.25em 0.5em 1.25em;
+    font-size: 1.0em;
+    line-height: 1.75em;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 200px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+
 
 /* SHOW STATIONS PAGE */
 .stations-title{
