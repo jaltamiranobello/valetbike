@@ -743,6 +743,7 @@ body {
   height: 10vh;
   width: 100vw;
   text-align: center;
+}
 
 .loginpage-button:hover {
   background-color: #002244;
@@ -932,5 +933,4 @@ body {
 
 .center-section-title{
   text-align: center;
-}
 }
