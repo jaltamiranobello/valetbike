@@ -23,6 +23,11 @@ Rails.application.routes.draw do
 
   # Station and bike routes
   get "stations/show"
+  get "stations/index"
+
+  
+
+
   get 'bikes/index'
   get 'bikes/show'
   get 'bikes/edit'
