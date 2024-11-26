@@ -274,6 +274,12 @@ body {
   color: #003366;
   margin-bottom: 10px;
 }
+.mainpage-map-title{
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 /* Map and Search Container */
 .mainpage-map-search-container {
