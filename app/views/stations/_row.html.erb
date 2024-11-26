@@ -1,5 +1,6 @@
 <div class="record-row  flexbox vertical stretch">
-  <%= station.name %> <br> <%= station.docked_bikes.count%>
-  <%= link_to "<button class='record-row2'>Show</button>".html_safe, stations_show_path, class: 'action show' %>
+  <%= station.name %> <br> Total Bikes:<%= station.docked_bikes.count%>
+  <% @identifier = station.identifier %>
+  <%= link_to "<button class='record-row2'>View Bikes</button>".html_safe, stations_show_path(identifier: station.identifier)%>
         
 </div>
