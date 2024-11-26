@@ -648,6 +648,68 @@ body {
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
+=======
+
+.record-row {
+  background-color: #d73f72e5;
+  border: none;
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.70em;
+  line-height: 1.75em;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.record-row:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* this is for the show button */
+.record-row2 {
+  background-color: #e089a6e5;
+  border: solid white;
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.70em;
+  line-height: 1.75em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+}
+
+.return-stations-button {
+    background-color: #d73f72e5;
+    border: none;
+    padding: 0.5em 1.25em 0.5em 1.25em;
+    font-size: 1.0em;
+    line-height: 1.75em;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 200px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+
+
+/* SHOW STATIONS PAGE */
+.stations-title{
+  background-color: #ffccd5;
+  font-family: 'monaco', monospace;
+  color: #ff0055;
+  font-size: 3.0rem;
+  font-weight: bold;
+  height: 10vh;
+  width: 100vw;
+  text-align: center;
+}
+
+>>>>>>> 274c7c5 (Updated error in the css page to properly render the station and bikes inventory views)
 .loginpage-button:hover {
   background-color: #002244;
 }
@@ -765,3 +827,25 @@ body {
     margin-bottom: .6em;
   }
 }
+<<<<<<< HEAD
+=======
+
+
+.grid-container {
+  display: grid;
+  gap: 50px 100px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgb(244, 239, 243);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+} 
+
+.center-section-title{
+  text-align: center;
+}
+>>>>>>> 274c7c5 (Updated error in the css page to properly render the station and bikes inventory views)
