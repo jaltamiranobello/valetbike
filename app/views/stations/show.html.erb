@@ -1,7 +1,6 @@
 <div class="stations-page">
   <div class="section-inner flexbox vertical stretch">
     <div class="stations-title">
-      <p><%= link_to('Back to Station List', root_path) %></p>
        <%= @current_station.name %>
     </div>  
     <div class="flexbox vertical stretch">
@@ -15,6 +14,9 @@
      
         
         </div>
+        </div>
+        <div class = "return-stations-button">
+          <p><%= link_to('Back to Stations', stations_index_path) %></p>
         </div>
       <% else %>
         <div class="empty">
