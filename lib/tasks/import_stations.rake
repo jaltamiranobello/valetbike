@@ -1,13 +1,24 @@
-
+# Run the command rake db:import_stations
 namespace :db do
+
+    desc "Creates the database from the data in "
+
     task :import_stations => :environment do |task|
         require 'csv'
-        puts "Getting information from the csv"
+        puts "importing station data..."
         CSV.parse(File.read("notes/station-data.csv"), headers: true).each do |row|
-            station_info = row.to_hash
+            puts "importing: #{row.to_hash["name"]}\n"
+            item = row.to_hash
             station = Station.new({
-                identifier: station_info["identifier"],
-                name: station_info["name"],
-                address: item})
-    end
+            identifier: item["identifier"],
+            name: item["name"],
+            address: item["address"]})
+            if station.save
+                puts "Successfully imported: #{item["name"]}\n"
+            else
+                puts "Failed to import: #{item["name"]}\n"
+            end
+    
+        end
+
 end
