@@ -1,3 +1,4 @@
+# Run the command rake db:import_stations
 namespace :db do
 
     desc "Creates the database from the data in "
@@ -19,5 +20,5 @@ namespace :db do
             end
     
         end
-    end
+
 end

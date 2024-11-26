@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_information: MyString
+  verified: false
+  card_balance: 1
+
+two:
+  card_information: MyString
+  verified: false
+  card_balance: 1
