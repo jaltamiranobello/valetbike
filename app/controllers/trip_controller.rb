@@ -1,3 +1,4 @@
+#Need to make sure the trip works with the stations and bikes
 class TripController < ApplicationController
   helper_method :start_trip, :end_trip, :get_current_length_of_active_trip, :calculate_duration, :calculate_emmisions
 
