@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
   
   devise_for :users
 
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'trip/index'
   get 'trip/book'
   get 'trip/confirm'
+  get 'stations_map/index'
  
   root to: "home#main"
 
