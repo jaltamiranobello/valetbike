@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
   
   resources :trips
   # get 'trips/new'
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   
   get 'users/verify_account'
   get 'users/delete_account'
+  get 'stations_map/index'
 
   root to: "home#main"
 
