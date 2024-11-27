@@ -1,41 +1,40 @@
 Rails.application.routes.draw do
-  # Resources for payments and trips
-  resources :payments
+  resources :payments 
   resources :trips
+  # get 'trips/new'
+  # get 'trips/create'
 
-  # Card-related routes
   get 'card/remove_card'
   get 'card/update_payment'
   get 'card/verify_payment'
   get 'card/pay'
 
-  # Bike-related routes
   get 'bike/get_bike_id'
   get 'bike/get_station_id'
   get 'bike/get_station_name'
   get 'bike/get_battery_percentage'
 
-  # User-related routes with Devise
+  
+  #post 'payments/create'
+  # get 'payments/success'
+  # get 'payments/cancel'
+  # adds devise routes for Users 
   devise_for :users
+
   get 'users/show'
+  
+  get 'card/remove_card'
+  get 'card/update_payment'
+  get 'card/verify_payment'
+  get 'card/pay'
+  get 'bike/get_bike_id'
+  get 'bike/get_station_id'
+  get 'bike/get_station_name'
+  get 'bike/get_battery_percentage'
+  
   get 'users/verify_account'
   get 'users/delete_account'
 
-  # Station and bike routes
-  get "stations/show"
-  get "stations/index"
-
-  
-
-
-  get 'bikes/index'
-  get 'bikes/show'
-  get 'bikes/edit'
-  get 'bikes/delete'
-  get 'bikes/new'
-
-  # Root route 
   root to: "home#main"
-
 
 end
