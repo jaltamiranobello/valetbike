@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ .right-section{
+    float: right;
+    position: relative;
+  }
+
+  #map{
+    position: relative; 
+    width: 77.5%; 
+    height: 600px;
+    /* float: right; */
+  }
