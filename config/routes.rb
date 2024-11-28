@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # adds routes for payments
   resources :payments
-  resources :stations
   post 'payments/create'
   get 'payments/success'
   get 'payments/cancel'
@@ -9,6 +8,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'users/show'
+  get 'stations/show'
+  get 'stations/index'
+  get 'bikes/index'
+  
+
   
   get 'card/remove_card'
   get 'card/update_payment'
