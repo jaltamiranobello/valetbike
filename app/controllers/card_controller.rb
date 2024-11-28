@@ -10,4 +10,7 @@ class CardController < ApplicationController
 
   def pay
   end
+
+  def pay
+  end
 end
