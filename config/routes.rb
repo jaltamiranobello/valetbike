@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # adds routes for payments
   resources :payments
+  resources :stations
   post 'payments/create'
   get 'payments/success'
   get 'payments/cancel'
