@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+<<<<<<< HEAD
   # creates a new Payment object 
   def new
   end
@@ -42,4 +43,18 @@ class PaymentsController < ApplicationController
   #   #handle if the payment is cancelled
   #   redirect_to root_url, notice: "Purchase Unsuccessful"
   # end
+=======
+  def new
+  end
+
+  def create 
+  end
+
+  def edit
+  end
+
+  def update
+  end
+  
+>>>>>>> ca346d1 (created payments controller, new and edit placeholder views, and edited routes file)
 end
