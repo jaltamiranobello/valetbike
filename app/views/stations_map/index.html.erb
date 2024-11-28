@@ -3,7 +3,7 @@
 
 <body>
   <head>
-   <!-- includes leaflet library: leaflet css and leaflet js  -->
+   <!-- added the leaflet library: leaflet css and leaflet js  -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -11,13 +11,26 @@
 
   <div id = "map" class = "right-section">
         <script>
-          <!-- sets initial map view: lat,long, zoom position -->
+          <!-- intials the view of the map using openstreetmap -->
           var map = L.map('map').setView([42.3238896, -72.652456], 14);
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-              maxZoom: 19
+              maxZoom: 15
             }).addTo(map)
 
+
+          var stationIcon = L.icon({
+            iconUrl: 'images/bikeLogo.png',
+            iconSize: [43, 36],
+
+          })
+
+          var stationMarker = L.marker([42.3238896, -72.652456], { icon: stationIcon }).addTo(map);
+
+    
+          stationMarker.bindPopup('station Location').openPopup();
         </script>
+
+        
   </div>
