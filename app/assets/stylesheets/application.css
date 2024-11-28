@@ -15,13 +15,15 @@
  */
 
  .right-section{
-    float: right;
-    position: relative;
+    float: left;
+    position: absolute;
+    left: 0px;
   }
 
   #map{
     position: relative; 
-    width: 77.5%; 
+    width: 47.5%; 
     height: 600px;
-    /* float: right; */
+    float: left;
+    left: 0px;
   }
