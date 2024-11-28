@@ -1,24 +1,13 @@
 class StationsController < ApplicationController
-  def main 
-  end 
-  
+
   def index
     @stations = Station.all.order(identifier: :asc)
   end
 
-  def has_bike(bike_id)
-
+  #gets the current_bike id and then displays that bike on the view template
+  def show
+    @current_station = Station.find_by(identifier: params[:identifier])
+    @bikes = Bike.where(current_station_id: @current_station.identifier)
   end
 
-  def checkout_bike(bike_id)
-
-  end
-
-  def return_bike(bike_id)
-
-  end
-
-  def get_list_of_bikes(station_id)
-
-  end
 end

@@ -21,8 +21,13 @@ Rails.application.routes.draw do
   # adds devise routes for Users 
   devise_for :users
 
+  get "stations/show"
+  get "stations/index"
+  get 'bikes/index'
+  get 'bikes/show'
   get 'users/show'
-  
+  get "stations/show"
+  get "stations/index"
   get 'card/remove_card'
   get 'card/update_payment'
   get 'card/verify_payment'
@@ -38,4 +43,3 @@ Rails.application.routes.draw do
   root to: "home#main"
 
 end
-
