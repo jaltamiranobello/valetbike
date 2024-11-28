@@ -1,15 +1,4 @@
 class BikesController < ApplicationController
-  def get_bike_id
-    self.bike_id
-  end
-
-  def get_station_id
-    self.station_id
-  end
-
-  def get_station_name
-    self.station
-  end
   
   def index
     @bikes = Bike.all
@@ -23,8 +12,6 @@ class BikesController < ApplicationController
   def edit
     @bike = Bike.find(params[:id])
   end
-
-  
 
   
 end
