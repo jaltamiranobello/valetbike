@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'payments/new'
+  get 'payments/create'
+  get 'payments/edit'
+  get 'payments/update'
   # adds routes for payments
   # adds devise routes for Users 
   devise_for :users
@@ -16,7 +20,7 @@ Rails.application.routes.draw do
   get 'card/update_payment'
   get 'card/verify_payment'
   get 'card/pay'
-  
+
   get 'bike/get_bike_id'
   get 'bike/get_station_id'
   get 'bike/get_station_name'
