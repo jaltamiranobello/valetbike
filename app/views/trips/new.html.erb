@@ -13,17 +13,19 @@
 <div class="bookRide-container">
 
   <h1 class="bookRide-title">Book Your Ride</h1>
-  <p>Booking from <span class="bookRide-station-name">123 Street Way</span> Station</p>
-  <button class="bookRide-btn bookRide-change-station">Change Station</button>
+  <p>Booking from <span class="bookRide-station-name"> <%= @bike.current_station.name %></span> Station</p> 
+  <%= link_to "<button class='bookRide-btn bookRide-change-station'>Change Station</button>".html_safe, stations_index_path %>
+  <!-- <h2 class="bookRide-step">1. Choose a bike</h2> -->
+  <p>Booking Bike ID: <span class="bookRide-station-name"> <%= @bike.identifier %></span></p> 
+  <%= link_to "<button class='bookRide-btn bookRide-change-station'>Change Bike</button>".html_safe, stations_show_path(identifier: @bike.current_station.identifier )%>
+  <!-- <p class="bookRide-instructions">Please enter the bike ID code of the bike you would like to ride. This can be found between the handlebars.</p> -->
 
-  <h2 class="bookRide-step">1. Choose a bike</h2>
-  <p class="bookRide-instructions">Please enter the bike ID code of the bike you would like to ride. This can be found between the handlebars.</p>
-
-  <%= form_for @trip do |f| %>
+  <!-- <%= form_for @trip do |f| %>
     <div class="bookRide-form-group">
       <%= f.label "Bike ID", class: "bookRide-form-label" %>
       <%= f.text_field :bike_used, class: "bookRide-form-input" %>
     </div>
+  -->
 
     
 
