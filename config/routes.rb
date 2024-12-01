@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'payments/new'
-  get 'payments/create'
+  post 'payments/new', to: 'payments#create'
   get 'payments/edit'
   get 'payments/update'
   # adds routes for payments
