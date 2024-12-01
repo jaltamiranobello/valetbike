@@ -3,12 +3,13 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    #create stripe customer for payment, update if already created
+    # create new customer
     customer = Stripe::Customer.create(
-      name: current_user.full_name,
+      name: current_user.first_name + " " + current_user.first_name, 
       email: current_user.email,
       description: "Customer id: #{current_user.id}",
     )
+    # create new payment session
     session = Stripe::Checkout::Session.create( 
       customer: customer, 
       payment_method_types: [‘card’],
