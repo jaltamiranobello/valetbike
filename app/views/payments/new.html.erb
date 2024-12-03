@@ -1,31 +1,5 @@
 <div>
-  <h1 class="font-bold text-4xl"> Pay for Trip</h1>
-
-  <%= form_for @payment do %>
-  <label class="amount">
-      <span>Your total is: $5.00</span>
-  </label>
-
-  <p></p>
-
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="Trip"
-    data-amount="500"
-    data-locale="auto">
-  </script>
-
-#   <script async
-#   src="https://js.stripe.com/v3/buy-button.js">
-# </script>
-
-# <stripe-buy-button
-#   buy-button-id="buy_btn_1QRjkyP2KFfTkjU1lET2ThPM"
-#   publishable-key="pk_test_51QJdchP2KFfTkjU15XFXtkXLqpa5NgHhWwGuIR1fZNFsEsbeG3F5Avjyz3by7md1JECNwbcwXzqU0C2cY6i3Dzs500koLCFnCO"
-# >
-# </stripe-buy-button>
-
-<% end %>
+  <h1>Pay for Trip</h1>
+  <li><%= link_to("Pay", @paymentLink.url) %></li>
 
 </div>
