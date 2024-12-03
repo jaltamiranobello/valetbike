@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :payments 
   resources :trips
-  # get 'trips/index'
-  # get 'trips/new'
+  #get 'trips/index'
+  get 'trips/new'
   # get 'trips/create'
 
   get 'card/remove_card'
