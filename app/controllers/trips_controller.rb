@@ -1,19 +1,38 @@
 class TripsController < ApplicationController
-  def index
-  end
-
   def new
-    @trip = Trip.new
     @bike = Bike.find_by(identifier: params[:identifier])
-    # @trip = Trip.new(start_time: Time.now, 
-    #                   user_id: current_user,
-    #                   bike_used_id: @bike,
-    #                   start_station_id: @bike.current_station)
+    @trip = Trip.new
     @start_station = Station.find_by(identifier: @trip.start_station_id)
   
+
   end
 
   def create
+    @trip = Trip.new(trip_params)
+    
+    if @trip.save
+      bike = Bike.find_by(identifier: params[:trip][:bike_used_id])
+      bike.current_station.docked_bikes.delete(Bike.find_by(id: bike_used.id))
+      flash[:notice] = "Trip started successfully!"
+      redirect_to edit_trip_path(@trip)
+    else
+      if @trip.errors.any?
+        flash[:alert] = @trip.errors.full_messages
+      end
+      render('new', :status => :unprocessable_entity)
+    
+    end
+  end
+
+  private
+
+  def trip_params
+    params.require(:trip).permit(:start_time, :user_id, :bike_used_id, :start_station_id)
+  end
+
+
+
+  def created
     @trip = Trip.new
     trip_success = initalize_trip(params[:station_id].to_i, params[:bike_id].to_i, current_user.id)
     unless trip_success == nil
