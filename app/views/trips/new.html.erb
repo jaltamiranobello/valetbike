@@ -29,9 +29,33 @@
 
     
 
+  <%= form_for @trip, html: { id: 'book-bike-form' } do |f| %>
+    <%= f.hidden_field :bike_used_id, value: @bike.id %>
+    <%= f.hidden_field :start_station_id, value: @bike.current_station.id %>
+    <%= f.hidden_field :start_time, value: Time.now %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
     <div class="bookRide-button-group">
-      <%= f.submit "Book My Bike", class: "bookRide-btn bookRide-primary" %>
+      <%= f.submit "Book My Bike", class: "bookRide-btn bookRide-primary", id: "book-bike-button" %>
     </div>
+  <% end %>
+</div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookBikeForm = document.getElementById('book-bike-form');
+    const bookBikeButton = document.getElementById('book-bike-button');
+
+    if (bookBikeButton && bookBikeForm) {
+      bookBikeButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Are you sure you want to book this bike?')) {
+          bookBikeForm.submit();
+        }
+      });
+    }
+  });
+  </script>
   <% end %>
 </div>
 
