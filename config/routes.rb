@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'payments/new'
-  post 'payments/new', to: 'payments#create'
-  get 'payments/edit'
-  get 'payments/update'
+  get '/payments/success', to: 'payments#success'
+  get '/payments/cancel'
+  resources :payments
+  # get 'payments/new'
+  # post 'payments/new', to: 'payments#create'
+  # get 'payments/edit'
+  # get 'payments/update'
   # adds routes for payments
   # adds devise routes for Users 
   devise_for :users
@@ -25,6 +28,7 @@ Rails.application.routes.draw do
   get 'bike/get_station_id'
   get 'bike/get_station_name'
   get 'bike/get_battery_percentage'
+
   
   root to: "home#main"
 end
