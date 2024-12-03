@@ -2,9 +2,6 @@ class TripsController < ApplicationController
   def new
     @bike = Bike.find_by(identifier: params[:identifier])
     @trip = Trip.new
-    @start_station = Station.find_by(identifier: @trip.start_station_id)
-  
-
   end
 
   def create
