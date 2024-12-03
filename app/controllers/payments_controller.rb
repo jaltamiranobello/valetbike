@@ -15,6 +15,10 @@ class PaymentsController < ApplicationController
           quantity: 1
         },
       ],
+      after_completion: {
+          type: 'redirect',
+          redirect: {url: 'http://localhost:3000/payments/success'},
+      }
     })
   end
 
