@@ -26,9 +26,14 @@
       <%= f.text_field :bike_used, class: "bookRide-form-input" %>
     </div>
   -->
-
+  <div class="bookRide-button-group">
+  <%= link_to "<button class='bookRide-btn bookRide-primary'>Book My Bike</button>".html_safe, trips_path %>
+  </div>
+  <!-- <div class="bookRide-button-group">
+  <%= f.submit "Book My Bike", class: "bookRide-btn bookRide-primary", id: "book-bike-button" %>
+  </div> -->
     
-
+  <!--
   <%= form_for @trip, html: { id: 'book-bike-form' } do |f| %>
     <%= f.hidden_field :bike_used_id, value: @bike.id %>
     <%= f.hidden_field :start_station_id, value: @bike.current_station.id %>
@@ -56,6 +61,7 @@
     }
   });
   </script>
+  -->
   <% end %>
 </div>
 
