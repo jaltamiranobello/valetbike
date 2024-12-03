@@ -125,7 +125,6 @@
 
 .cta-content img {
   max-width: 40%;
-
 }
 
 /* How To Ride */
@@ -184,42 +183,6 @@
 .step p {
   color: #333;
   font-size: 1.2rem;
-}
-
-/* Frequently Asked Question */
-
-.faq-content {
-  gap: 20px;
-  margin: 0 auto;
-  width: 100vw;
-  height: auto;
-  padding: 5%;
-  font-size: xx-large;
-}
-
-.accordion {
-  background-color: #eee;
-  border: solid;
-  border: 3px;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
 }
 
 /***********************************/
@@ -449,266 +412,9 @@ body {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /***********************************/
-/*         Registration Page       */
+/*         REgistration Page       */
 /***********************************/
-=======
-/************************************/
-/*       Main Page                  */
-/************************************/
-
-/* General Layout */
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* General Header Styles */
-.mainpage-header {
-  background-color: #ffccd5;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  flex-wrap: wrap;
-}
-
-.mainpage-logo img {
-  height: 50px;
-}
-
-/* Navigation Menu */
-.mainpage-nav-menu {
-  display: flex;
-  gap: 15px;
-}
-
-.mainpage-nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  margin: 0;
-  padding: 0;
-}
-
-.mainpage-nav-menu li {
-  font-size: 1rem;
-}
-
-.mainpage-nav-menu a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #003366;
-}
-
-.mainpage-nav-menu a:hover {
-  color: #ff3366;
-}
-
-/* Account Info */
-.mainpage-account-info {
-  font-size: 0.9rem;
-  color: #003366;
-  font-weight: bold;
-  text-align: right;
-}
-
-/* Menu Button (for Mobile) */
-.mainpage-menu-btn {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  display: none; /* Hidden by default */
-}
-
-.mainpage-menu-icon {
-  color: #003366;
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-  .mainpage-nav-menu {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-
-  .mainpage-nav-menu.active {
-    display: flex; /* Show menu on toggle */
-  }
-
-  .mainpage-menu-btn {
-    display: block; /* Show the menu button */
-  }
-}
-
-
-/* Welcome Section */
-.mainpage-welcome {
-  text-align: center;
-  padding: 20px;
-  background-color: #ffffff;
-}
-
-.mainpage-welcome h1 {
-  font-size: 1.8rem;
-  color: #003366;
-  margin-bottom: 10px;
-}
-
-.mainpage-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mainpage-nav li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.mainpage-nav li a {
-  text-decoration: none;
-  color: #003366;
-  font-weight: bold;
-}
-
-/* Content Section */
-.mainpage-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 20px;
-  gap: 20px;
-}
-
-/* Map Section */
-.mainpage-map-container {
-  flex: 1 1 45%;
-  position: relative;
-  border: 2px solid #00ff00; /* Matches the reference */
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-
-.mainpage-map-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
-  color: #003366;
-}
-
-.mainpage-map-wrapper {
-  width: 100%;
-  height: 300px; /* Adjust to match the map size */
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.mainpage-map-iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.mainpage-current-ride {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background-color: #003366;
-  color: #ffffff;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.mainpage-current-ride-timer {
-  font-family: 'Digital', monospace;
-  font-size: 1.2rem;
-}
-
-/* Search Section */
-.mainpage-search {
-  flex: 1 1 45%;
-  border: 2px solid #00ff00; /* Matches the reference */
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-
-.mainpage-search-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
-  color: #003366;
-}
-
-.mainpage-search-box {
-  position: relative;
-  margin-top: 10px;
-}
-
-.mainpage-search-input {
-  width: calc(100% - 40px);
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.mainpage-search-clear-btn {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #ccc;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  .mainpage-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mainpage-map-container,
-  .mainpage-search {
-    flex: 1 1 100%;
-  }
-}
-
-
-
-
-
-
-
-
-
-/************************************/
-/*       REgistration Page           */
-/************************************/
-
->>>>>>> 1a24de8 (Update Main View and other views)
-=======
-/***********************************/
-/*         Registration Page       */
-/***********************************/
->>>>>>> b9acea0 (Added FAQ to the welcome page view)
 .top-registration {
   position: relative;
   background-color: #78a4eb;
@@ -777,9 +483,7 @@ body {
   position: absolute;
 }
 
-/***********************************/
-/*         Account & Settings      */
-/***********************************/
+/* Account & Settings */
 
 .pink-header{
   background-color: #ffccd5;
@@ -1064,193 +768,36 @@ body {
 /* Submit Button */
 .submit-button {
   width: 100%;
-  margin-top: 4em;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #0066cc; /* Solid blue button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.page-section .section-inner {
-  margin-right: 1.4em;
-  margin-left: 1.4em;
+.submit-button:hover {
+  background-color: #004d99; /* Slightly darker blue on hover */
+}
+
+/* Minimal Links */
+.forgot-password-container a {
+  font-size: 0.9rem;
+  color: #0066cc;
+  text-decoration: none;
+  margin-top: 15px;
 }
 
 .forgot-password-container a:hover {
   text-decoration: underline;
 }
 
-
-/***********************************/
-/*         Book Ride Page          */
-/***********************************/
-.bookRide-container {
-  text-align: center;
-  margin: 20px auto;
-  width: 80%;
-  height: 80vh;
-  background-color: #fbe0e4;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  align-items: center;
-  align-content: center;
-}
-
-.bookRide-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e91e63;
-  margin-bottom: 10px;
-}
-
-/* this is for the station button */
-.record-row {
-  background-color: #d73f72e5;
-  border: none;
-  padding: 0.5em 1.25em 0.5em 1.25em;
-  font-size: 0.70em;
-  line-height: 1.75em;
-  border-radius: 12px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 12px;
-}
-
-.record-row:hover{
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-/* this is for the show button */
-.record-row2 {
-  background-color: #e089a6e5;
-  border: solid white;
-  padding: 0.5em 1.25em 0.5em 1.25em;
-  font-size: 0.70em;
-  line-height: 1.75em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 12px;
-}
-
-.return-stations-button {
-    background-color: #d73f72e5;
-    border: none;
-    padding: 0.5em 1.25em 0.5em 1.25em;
-    font-size: 1.0em;
-    line-height: 1.75em;
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 12px;
-    width: 200px;
-    position: relative;
-    left: 30px;
-    top: 30px;
-}
-
-
-/* SHOW STATIONS PAGE */
-.stations-title{
-  background-color: #ffccd5;
-  font-family: 'monaco', monospace;
-  color: #ff0055;
-  font-size: 3.0rem;
-  font-weight: bold;
-  height: 10vh;
-  width: 100vw;
-  text-align: center;
-}
-
 .stations-page{
   height: 100vh;
   width: 100vw;
-}
-
-/***********************************/
-/*         Book Ride Page          */
-/***********************************/
-.bookRide-container {
-  text-align: center;
-  margin: 20px auto;
-  width: 80%;
-  height: 80vh;
-  background-color: #fbe0e4;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  align-items: center;
-  align-content: center;
-}
-
-.bookRide-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e91e63;
-  margin-bottom: 10px;
-}
-
-.bookRide-station-name {
-  font-weight: bold;
-  color: #007bff;
-}
-
-.bookRide-btn {
-  display: inline-block;
-  margin: 10px 0;
-  padding: 10px 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.bookRide-change-station {
-  background-color: #007bff;
-  color: white;
-}
-
-.bookRide-primary {
-  background-color: #4caf50;
-  color: white;
-}
-
-.bookRide-secondary {
-  background-color: #ffc107;
-  color: black;
-}
-
-.bookRide-form-group {
-  margin-bottom: 15px;
-}
-
-.bookRide-form-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.bookRide-form-input {
-  width: 50%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.bookRide-button-group {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.bookRide-step {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.bookRide-instructions {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #555;
 }
 
 /***********************************/
@@ -1266,6 +813,7 @@ body {
     font-size: 1.9em;
     margin-bottom: .6em;
   }
+
 }
 
 
