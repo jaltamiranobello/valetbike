@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :payments 
   resources :trips
+  # get 'trips/index'
   # get 'trips/new'
   # get 'trips/create'
 
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   get 'bike/get_station_id'
   get 'bike/get_station_name'
   get 'bike/get_battery_percentage'
-  get 'trips/new'
+  # get 'trips/new'
 
   
   #post 'payments/create'
