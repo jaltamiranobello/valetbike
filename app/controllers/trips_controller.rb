@@ -6,15 +6,27 @@ class TripsController < ApplicationController
 
   def create
     @bike = Bike.find_by(identifier: params[:identifier])
-    @trip = Trip.new(bike_used_id: @bike.identifier, start_station_id: @bike.current_station.identifier, user_id:current_user.id)
+    @station = Station.find_by(identifier: @bike.current_station_id)
+    @user = User.find(current_user.id)
+    @trip = Trip.new(bike_used_id: @bike.identifier, start_station_id: @station.identifier, user_id: @user.id)
     if @trip.save
       render('confirmation')
     else
-      if @trip.errors.any?     
-        flash[:alert] = @trip.errors.full_messages
-      end
-      render('new', :status => :unprocessable_entity)
+      render plain: "FAILED"
     end
+  end
+    # @bike = Bike.find_by(identifier: params[:identifier])
+    # @trip = Trip.new(bike_used_id: @bike.identifier, start_station_id: @bike.current_station.identifier, user_id:current_user.id)
+    # if @trip.save
+    # render('confirmation')
+    # else
+    #   if @trip.errors.any?     
+    #     flash[:alert] = @trip.errors.full_messages
+    #   end
+    #   render('new', :status => :unprocessable_entity)
+    # end
+
+
     # @trip = Trip.new(trip_params)
     
     # if @trip.save
@@ -29,7 +41,6 @@ class TripsController < ApplicationController
     #   render('new', :status => #:unprocessable_entity)
     
     # end
-  end
 
   private
 
