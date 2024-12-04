@@ -27,7 +27,7 @@
     </div>
   -->
   <div class="bookRide-button-group">
-  <%= link_to "<button class='bookRide-btn bookRide-primary'>Book My Bike</button>".html_safe, trips_path %>
+  <%= link_to "<button class='bookRide-btn bookRide-primary'>Book My Bike</button>".html_safe, create_trip_path(identifier:@bike.identifier) %>
   </div>
   <!-- <div class="bookRide-button-group">
   <%= f.submit "Book My Bike", class: "bookRide-btn bookRide-primary", id: "book-bike-button" %>
