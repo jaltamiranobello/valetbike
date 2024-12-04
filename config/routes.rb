@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'trips/create', to: 'trips#create', as:'create_trip'
   resources :payments 
   resources :trips
   #get 'trips/index'

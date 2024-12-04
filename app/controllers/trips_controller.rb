@@ -5,20 +5,30 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(trip_params)
-    
+    @bike = Bike.find_by(identifier: params[:identifier])
+    @trip = Trip.new(bike_used_id: @bike.identifier, start_station_id: @bike.current_station.identifier, user_id:current_user.id)
     if @trip.save
-      bike = Bike.find_by(identifier: params[:trip][:bike_used_id])
-      bike.current_station.docked_bikes.delete(Bike.find_by(id: bike_used.id))
-      flash[:notice] = "Trip started successfully!"
-      redirect_to edit_trip_path(@trip)
+      render('confirmation')
     else
-      if @trip.errors.any?
+      if @trip.errors.any?     
         flash[:alert] = @trip.errors.full_messages
       end
       render('new', :status => :unprocessable_entity)
-    
     end
+    # @trip = Trip.new(trip_params)
+    
+    # if @trip.save
+    #   bike = Bike.find_by(identifier: params[:trip][:bike_used_id])
+    #   bike.current_station.docked_bikes.delete(Bike.find_by(id: bike_used.id))
+    #   flash[:notice] = "Trip started successfully!"
+    #   redirect_to edit_trip_path(@trip)
+    # else
+    #   if @trip.errors.any?
+    #     flash[:alert] = @trip.errors.full_messages
+    #   end
+    #   render('new', :status => #:unprocessable_entity)
+    
+    # end
   end
 
   private
