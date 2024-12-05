@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'trips/create', to: 'trips#create', as:'create_trip'
+  get '/payments/success', to: 'payments#success'
+  get '/payments/cancel'
   resources :payments 
   resources :trips
   #get 'trips/index'
