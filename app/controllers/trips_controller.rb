@@ -55,7 +55,8 @@ class TripsController < ApplicationController
     # set the end station
     # set the end time
     # set the end price
-    # redirect_to new_payment_path, send in trip id 
+    # send in the trip id with path
+    redirect_to new_payment_path
   end 
 
   # shows a list of stations in order to choose a station to end at
@@ -63,7 +64,8 @@ class TripsController < ApplicationController
     @stations = Station.all.order(identifier: :asc)
   end
 
-  def calculate_price
+  def calculate_price(trip_id)
+   #  @trip = Trip.find_by(id: trip_id)
     # intake trip id
     # end time - start time 
     # multiply this by 0.25
