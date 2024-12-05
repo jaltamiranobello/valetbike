@@ -1,8 +1,10 @@
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
 
+
 <!-- Main Page -->
 
+<% if user_signed_in? %>
 <% if user_signed_in? %>
 
   <!-- Header Section -->
@@ -183,9 +185,13 @@
 
           </div>
 
+
         </div>
+
 
       </div>
     <% end %>
+    <% end %>
   </div>
 </div>
+
