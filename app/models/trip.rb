@@ -13,6 +13,16 @@ class Trip < ApplicationRecord
     
     before_create :set_identifier
 
+    def formatted_start_time
+        time = start_time.is_a?(Integer) ? Time.at(start_time) : start_time
+        time.strftime("%B %d, %Y at %I:%M %p") if time
+      end
+    
+      def formatted_end_time
+        time = start_time.is_a?(Integer) ? Time.at(start_time) : start_time
+        time.strftime("%B %d, %Y at %I:%M %p") if time
+      end
+
     private
 
     def set_identifier
