@@ -2,8 +2,16 @@
 <html>
     <div class="record-row flexbox vertical stretch">
      <p> Bike  <%=bike.identifier%> </p>
-     <%= link_to "<button class='record-row2'>Rent Bike</button>".html_safe,
-     trips_new_path(identifier: bike.identifier)%>
+     <div class="button-container" style="display: flex; gap: 10px;">
+        <%= link_to trips_new_path(identifier: bike.identifier) do %>
+            <button id="rent-bike-btn" class="record-row2">Rent Bike</button>
+        <% end %>
+
+        <%= link_to stations_index_path(identifier: bike.identifier) do %>
+            <button id="return-bike-btn" class="record-row2">Return Bike</button>
+        <% end %>
+    </div>
+
     </div>
     <!-- lists the bikes -->
    
