@@ -48,10 +48,7 @@ class TripsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
+  def calculate_price
   end
 
 end
