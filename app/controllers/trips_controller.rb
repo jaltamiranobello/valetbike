@@ -1,5 +1,13 @@
 class TripsController < ApplicationController
+  def index
+    @stations = Station.all.order(identifier: :asc)
+  end
 
+  #gets the current_bike id and then displays that bike on the view template
+  def show
+    @current_station = Station.find_by(identifier: params[:identifier])
+    @bikes = Bike.where(current_station_id: @current_station.identifier)
+  end
 
   def new
     @bike = Bike.find_by(identifier: params[:identifier])
@@ -12,7 +20,7 @@ class TripsController < ApplicationController
       )
     else
       flash[:alert] = "Bike not found"
-      redirect_to stations_index_path
+      redirect_to trips_path
     end
   end
 
@@ -36,18 +44,14 @@ class TripsController < ApplicationController
       end
     else
       flash[:alert] = "Bike not found"
-      redirect_to stations_index_path
+      redirect_to trips_path
     end
   end
 
-  def calculate_price
-    #Access the start time hours
-    #Access the start time minutes
+  def edit
+  end
 
-    #Access the end time hours
-    #Acces the end time minutes
-
-    #total_time =
+  def update
   end
 
 end
