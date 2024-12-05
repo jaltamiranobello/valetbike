@@ -1,51 +1,56 @@
 class TripsController < ApplicationController
   def new
     @bike = Bike.find_by(identifier: params[:identifier])
-    @trip = Trip.new
+    if @bike
+      @trip = Trip.new(
+        bike_used_id: @bike.identifier,
+        start_station_id: @bike.current_station.identifier,
+        user_id: current_user.id,
+        start_time: Time.current
+      )
+    else
+      flash[:alert] = "Bike not found"
+      redirect_to stations_index_path
+    end
   end
 
   def create
     @bike = Bike.find_by(identifier: params[:identifier])
-    @station = Station.find_by(identifier: @bike.current_station_id)
-    @user = User.find(current_user.id)
-    @trip = Trip.new(bike_used_id: @bike.identifier, start_station_id: @station.identifier, user_id: @user.id)
-    if @trip.save
-      render('confirmation')
+    if @bike
+      @trip = Trip.new(
+        bike_used_id: @bike.identifier,
+        start_station_id: @bike.current_station.identifier,
+        user_id: current_user.id,
+        start_time: Time.current
+      )
+      
+      if @trip.save
+        # Update the bike's status or location if necessary
+        bike = Bike.find_by(identifier: params[:identifier])
+        bike.current_station.docked_bikes.delete(Bike.find_by(identifier: bike.identifier))
+        render 'confirmation'
+      else
+        render plain: "FAILED: #{@trip.errors.full_messages.join(', ')}"
+      end
     else
-      render plain: "FAILED"
+      flash[:alert] = "Bike not found"
+      redirect_to stations_index_path
     end
   end
-    # @bike = Bike.find_by(identifier: params[:identifier])
-    # @trip = Trip.new(bike_used_id: @bike.identifier, start_station_id: @bike.current_station.identifier, user_id:current_user.id)
-    # if @trip.save
-    # render('confirmation')
-    # else
-    #   if @trip.errors.any?     
-    #     flash[:alert] = @trip.errors.full_messages
-    #   end
-    #   render('new', :status => :unprocessable_entity)
-    # end
 
-
-    # @trip = Trip.new(trip_params)
-    
-    # if @trip.save
-    #   bike = Bike.find_by(identifier: params[:trip][:bike_used_id])
-    #   bike.current_station.docked_bikes.delete(Bike.find_by(id: bike_used.id))
-    #   flash[:notice] = "Trip started successfully!"
-    #   redirect_to edit_trip_path(@trip)
-    # else
-    #   if @trip.errors.any?
-    #     flash[:alert] = @trip.errors.full_messages
-    #   end
-    #   render('new', :status => #:unprocessable_entity)
-    
-    # end
-
-  private
-
-  def trip_params
-    params.require(:trip).permit(:start_time, :user_id, :bike_used_id, :start_station_id)
+  def end_trip
+    @trip = Trip.find_by(id: params[:id])
+    if @trip
+      @trip.update(
+        end_station_id: params[:end_station_id],
+        end_time: Time.current
+      )
+      # Calculate and update price here
+      # @trip.update(price: calculated_price)
+      render 'trip_ended'
+    else
+      render plain: "Trip not found"
+    end
   end
 
 
