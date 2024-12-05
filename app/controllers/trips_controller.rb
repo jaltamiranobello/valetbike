@@ -52,6 +52,14 @@ class TripsController < ApplicationController
   end
 
   def update
+  def calculate_price
+    #Access the start time hours
+    #Access the start time minutes
+
+    #Access the end time hours
+    #Acces the end time minutes
+
+    #total_time =
   end
 
 end
