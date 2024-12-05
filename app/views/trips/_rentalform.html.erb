@@ -8,8 +8,8 @@
 
     <div class="button-container" style="display: flex; gap: 10px;">
         
-        <%= link_to stations_index_path(identifier: station.identifier) do %>
-            <button id="return-bike-btn" class="record-row2">End Trip</button>
+        <%= link_to trips_index_path(identifier: station.identifier) do %>
+            <button id="return-bike-btn" class="record-row2">Select Station</button>
         <% end %>
     </div>
     </div>
