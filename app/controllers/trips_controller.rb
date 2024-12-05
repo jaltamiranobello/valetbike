@@ -38,7 +38,7 @@ class TripsController < ApplicationController
         # Update the bike's status or location if necessary
         bike = Bike.find_by(identifier: params[:identifier])
         bike.current_station.docked_bikes.delete(Bike.find_by(identifier: bike.identifier))
-        render 'confirmation'
+        render 'show'
       else
         render plain: "FAILED: #{@trip.errors.full_messages.join(', ')}"
       end
