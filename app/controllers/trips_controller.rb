@@ -65,9 +65,9 @@ class TripsController < ApplicationController
   end
 
   def calculate_price(trip_id)
-   #  @trip = Trip.find_by(id: trip_id)
-    # intake trip id
-    # end time - start time 
-    # multiply this by 0.25
+    trip = Trip.find_by(id: trip_id)
+    rideTime = trip.end_time - trip.start_time
+    trip.price = rideTime * 0.25
   end 
+  
 end
