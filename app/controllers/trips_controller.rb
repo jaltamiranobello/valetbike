@@ -1,9 +1,11 @@
 class TripsController < ApplicationController
-  def index
-    @stations = Station.all.order(identifier: :asc)
+  # shows a list of trips
+  def index 
+    # select only the trips that you made with ID
+    @trips = Trip.find_by(user_id: current_user.id).order(identifier: :asc)
   end
 
-  #gets the current_bike id and then displays that bike on the view template
+  # shows a single trip
   def show
     @current_station = Station.find_by(identifier: params[:identifier])
     @bikes = Bike.where(current_station_id: @current_station.identifier)
@@ -54,4 +56,8 @@ class TripsController < ApplicationController
   def update
   end
 
+  # shows a list of stations in order to choose a station to end at
+  def return_bike
+    @stations = Station.all.order(identifier: :asc)
+  end
 end
