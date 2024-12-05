@@ -54,7 +54,7 @@ class TripsController < ApplicationController
     # get station from identifier
     # set the end station
     # set the end time
-    # set the end price
+    # trip.price = calculate_price(trip_id)
     # send in the trip id with path
     redirect_to new_payment_path
   end 
@@ -67,7 +67,7 @@ class TripsController < ApplicationController
   def calculate_price(trip_id)
     trip = Trip.find_by(id: trip_id)
     rideTime = trip.end_time - trip.start_time
-    trip.price = rideTime * 0.25
+    rideTime * 0.25
   end 
-  
+
 end
