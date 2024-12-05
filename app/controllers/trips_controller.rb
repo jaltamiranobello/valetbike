@@ -6,10 +6,10 @@ class TripsController < ApplicationController
   end
 
   # shows a single trip
-  def show
-    @current_station = Station.find_by(identifier: params[:identifier])
-    @bikes = Bike.where(current_station_id: @current_station.identifier)
-  end
+  # def show
+  #   @current_station = Station.find_by(identifier: params[:identifier])
+  #   @bikes = Bike.where(current_station_id: @current_station.identifier)
+  # end
 
   def new
     @bike = Bike.find_by(identifier: params[:identifier])
@@ -50,14 +50,22 @@ class TripsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
-  end
+    # get station from identifier
+    # set the end station
+    # set the end time
+    # set the end price
+    # redirect_to new_payment_path, send in trip id 
+  end 
 
   # shows a list of stations in order to choose a station to end at
   def return_bike
     @stations = Station.all.order(identifier: :asc)
   end
+
+  def calculate_price
+    # intake trip id
+    # end time - start time 
+    # multiply this by 0.25
+  end 
 end
