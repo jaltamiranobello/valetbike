@@ -18,25 +18,34 @@
     <div style="max-width: 800px; margin: 0 auto; font-family: Arial, sans-serif;">
 
     <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px;">
-        <thead>
+      <thead>
         <tr style="background-color: #e089a6e5; color: white;">
-            <th style="padding: 12px; text-align: left; border-radius: 8px 0 0 8px;">Trip ID</th>
-            <th style="padding: 12px; text-align: left;">Start Station</th>
-            <th style="padding: 12px; text-align: left;">Bike ID</th>
-            <th style="padding: 12px; text-align: left; border-radius: 0 8px 8px 0;">Start Time</th>
+          <th style="padding: 12px; text-align: left; border-radius: 8px 0 0 8px;">Trip ID</th>
+          <th style="padding: 12px; text-align: left;">Start Station</th>
+          <th style="padding: 12px; text-align: left;">End Station</th>
+          <th style="padding: 12px; text-align: left;">Bike ID</th>
+          <th style="padding: 12px; text-align: left;">Time Rented</th>
+          <!-- there is a bug i have to fix for this part
+          <th style="padding: 12px; text-align: left; border-radius: 0 8px 8px 0;">End Time</th>
+          -->
         </tr>
-        </thead>
-        <tbody>
-        <% @trips.find_each do |trip| %>
-            <tr style="background-color: rgb(244, 239, 243); margin-bottom: 10px;">
+      </thead>
+      <tbody>
+        <% @trips.each do |trip| %>
+          <tr style="background-color: rgb(244, 239, 243); margin-bottom: 10px;">
             <td style="padding: 12px; border-radius: 8px 0 0 8px;"><%= trip.id %></td>
             <td style="padding: 12px;"><%= trip.start_station.name %></td>
+            <td style="padding: 12px;"><%= trip.end_station&.name || 'In Progress' %></td>
             <td style="padding: 12px;"><%= trip.bike_used.identifier %></td>
-            <td style="padding: 12px; border-radius: 0 8px 8px 0;"><%= trip.formatted_start_time %></td>
-            </tr>
+            <td style="padding: 12px;"><%= trip.formatted_start_time %></td>
+            <!-- 
+            <td style="padding: 12px; border-radius: 0 8px 8px 0;"><%= trip.formatted_end_time || 'In Progress' %></td>
+            -->
+          </tr>
         <% end %>
-        </tbody>
+      </tbody>
     </table>
+
     </div>
 </div>
 </div>
