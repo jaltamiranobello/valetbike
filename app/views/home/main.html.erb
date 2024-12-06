@@ -6,33 +6,33 @@
 <% if user_signed_in? %>
 
   <!-- Welcome Section -->
-  <div class="mainpage-welcome">
-    <h1>Welcome to ValetBike, <%= current_user.firstName %></h1>
-  </div>
 
   <div class="mainpage-map-search-container">
-  <!-- Map Section -->
-  <div class="mainpage-map-container">
-    <div class="mainpage-map-wrapper">
-      <iframe
-        src="https://www.google.com/maps/d/u/0/embed?mid=1DYEf2WcpIdAdxegfdgMGlekzDBfWPFc&ehbc=2E312F&noprof=1"
-        class="mainpage-map-iframe"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-    </div>
+    <!-- Map Section -->
+    <div class="mainpage-map-container">
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1DYEf2WcpIdAdxegfdgMGlekzDBfWPFc&ehbc=2E312F&noprof=1"
+          class="mainpage-map-iframe"
+          allowfullscreen
+          loading="lazy"></iframe>
 
-  </div>
+    </div>
 
   <!-- Search Section -->
-  <div class="mainpage-search">
-    <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
-    <%= link_to "<button class='record-row2'>VIEW STATIONS</button>".html_safe, stations_index_path %>
+    <div class="mainpage-search">
+      <div class="mainpage-welcome">
+        <h1>Welcome to ValetBike, <%= current_user.firstName %></h1>
+      </div>
 
-    <div class="mainpage-current-ride">
-    <span>CURRENT RIDE: </span><span>10:00</span>
+      <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
+      <%= link_to "<button class='record-row2'>VIEW STATIONS</button>".html_safe, stations_index_path %>
+
     </div>
+
+    
   </div>
+
+
 </div>
 
  

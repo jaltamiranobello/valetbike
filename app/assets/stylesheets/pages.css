@@ -136,7 +136,6 @@
   justify-content: center;
 }
 
-<<<<<<< HEAD
 .how-to-ride h2 {
   color: #f5f5f5;
   background-color: #ff0066;
@@ -209,6 +208,7 @@ body {
   font-size: 1.8rem;
   color: #003366;
   margin-bottom: 10px;
+  font-style: bold;
 }
 .mainpage-map-title{
   font-size: 1.8rem;
@@ -217,17 +217,19 @@ body {
   text-align: center;
 }
 
-/* Map and Search Container */
+#site-container {
+  flex: 1;
+  margin-top: 50px; 
+  background-color: #ffffff;
+}
+
+/* Map and Search Section */
 .mainpage-map-search-container {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: stretch;
-  width: 100vw;
-  height: 100vh;
-  gap: 20px;
-  padding: 20px;
-  background-color: #ffffff;
+  width: 100%;
+  height: calc(100vh - 120px); 
 }
 
 /* Map Section */
@@ -235,11 +237,9 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 10px;
   border-radius: 10px;
   background-color: #ffffff;
-  width: 50%; 
-  height: 100%; /
+  height: 100%; 
 }
 
 .mainpage-map-wrapper {
@@ -263,11 +263,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   border-radius: 10px;
   background-color: #ffffff;
-  width: 50%; /* Takes half the width */
-  height: 100%; /* Fills the container height */
 }
 
 .mainpage-search-title {
@@ -292,6 +289,45 @@ body {
 .record-row2:hover {
   background-color: #ffb6c1;
 }
+
+
+/* Search Section */
+.mainpage-search {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  width: 50%; 
+  height: 100%; 
+}
+
+.mainpage-search-title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.record-row2 {
+  background-color: #ffccd5;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 2rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.record-row2:hover {
+  background-color: #ffb6c1;
+}
+
+
 
 
 /***********************************/

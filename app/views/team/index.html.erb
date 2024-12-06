@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meet the Team</title>
+    <style>
+      .meet-the-team-container {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      .header {
+        background-color: #0056b3;
+        color: white;
+        padding: 20px;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+      }
+
+      .banner-image img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+      }
+
+      .team-members {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .team-card {
+        background-color: #e6f7ff;
+        border: 1px solid #0056b3;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 15px;
+        width: 200px;
+        text-align: left;
+      }
+
+      .team-card h2 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #0056b3;
+      }
+
+      .team-card p {
+        margin: 5px 0;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="meet-the-team-container">
+      <div class="header">
+        <h1>Meet the Team</h1>
+        <div class="banner-image">
+          <img src="/path-to-your-banner-image.jpg" alt="Team Banner">
+        </div>
+      </div>
+
+      <div class="team-members">
+        <% @team_members.each do |member| %>
+          <div class="team-card">
+            <h2><%= member[:name] %></h2>
+            <p><%= member[:email] %></p>
+            <p><%= member[:info] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -18,6 +18,22 @@ class TripsController < ApplicationController
     end
   end
 
+ # this method should display all of the trips a user has taken
+  def index
+  end
+
+ # displays a singular trip
+  def show
+  end
+
+# Allows the user to end a trip through a button or a form
+  def edit
+  end
+
+# handles the return bike cause this updates the trip
+  def update
+  end
+
   def initalize_trip(start_station_id, bike_used_id, user_id)
     #validate bike, station & customer
     unless Bike.exists?(bike_used_id)

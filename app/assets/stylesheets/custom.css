@@ -1,4 +1,3 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +9,12 @@
     font-family: "Poppins", Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the body is at least the full viewport height */
+    min-height: 100vh; 
   }
   
   /* Main Content */
   #site-container {
-    flex: 1; /* Allows the main content to take up available space */
+    flex: 1; 
   }
   
   /* Navbar */
@@ -64,7 +63,7 @@
   
   .nav-links a:hover,
   .nav-links a.active {
-    background-color: #ffb6c1; /* Slightly darker pink for hover */
+    background-color: #ffb6c1; 
     color: black;
   }
   
@@ -113,7 +112,7 @@
   /* Footer */
   .footer {
     width: 100%;
-    background-color: #ffccd5; /* Light pink */
+    background-color: #ffccd5; 
     padding: 20px 50px;
     display: flex;
     justify-content: center;
