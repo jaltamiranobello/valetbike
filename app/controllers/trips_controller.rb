@@ -38,8 +38,8 @@ class TripsController < ApplicationController
       
       if @trip.save
         # Update the bike's status or location if necessary
-        # bike = Bike.find_by(identifier: params[:identifier])
-        # bike.current_station.docked_bikes.delete(Bike.find_by(identifier: bike.identifier))
+        bike = Bike.find_by(identifier: params[:identifier])
+        bike.current_station.docked_bikes.delete(Bike.find_by(identifier: bike.identifier))
         render 'show'
       else
         render plain: "FAILED: #{@trip.errors.full_messages.join(', ')}"
@@ -53,19 +53,40 @@ class TripsController < ApplicationController
   def edit 
     @stations = Station.all.order(identifier: :asc)
     if Trip.find_by_id(params[:id]).present?
-      @trip = Trip.find_by_id(params[:id])
+      @trip = Trip.find_by(id: current_user.id)
       @bike = Bike.find_by(identifier: @trip.bike_used); 
     end
 
   end
 
   def update
-    station = Station.find_by(params[:identifier]) 
-    station.docked_bikes << Bike.find_by(identifier: Trip.find_by_id(params[:id]).bike_used)
-    Trip.find_by_id(params[:id]).update(end_time: Time.now, end_station_id: station.identifier)
-    Trip.find_by_id(params[:id]).save
+    @trip = Trip.where(user_id: current_user.id).order(created_at: :desc).first
+  
+    if @trip.nil?
+      flash[:alert] = "Trip not found"
+      redirect_to trips_index_path and return
+    end
+
+    station = Station.find_by(identifier: params[:identifier])
+    
+    if station.nil?
+      flash[:alert] = "Station not found"
+      redirect_to edit_trips_path(@trip) and return
+    end
+
+    bike = Bike.find_by(identifier: @trip.bike_used.identifier)
+    
+    if bike.nil?
+      flash[:alert] = "Bike not found"
+      redirect_to trips_edit_path(@trip) and return
+    end
+
+    # station = Station.find_by(params[:identifier]) 
+    station.docked_bikes << bike
+    @trip.update(end_time: Time.now, end_station_id: station.identifier)
+    @trip.save
     #user is returned payment page 
-    redirect_to new_payment_path
+    redirect_to stations_index_path
   end 
 
   def calculate_price(trip_id)
