@@ -2,14 +2,14 @@ class TripsController < ApplicationController
   # shows a list of trips
   def index 
     # select only the trips that you made with ID
-    @trips = Trip.find_by(user_id: current_user.id).order(identifier: :asc)
+    # @current_user = User.find_by(id: params[:id])
+    @trips = Trip.where(user_id: current_user.id)
   end
 
   # shows a single trip
-  # def show
-  #   @current_station = Station.find_by(identifier: params[:identifier])
-  #   @bikes = Bike.where(current_station_id: @current_station.identifier)
-  # end
+  def show
+    @trip = Trip.find_by(identifier: params[:identifier])
+  end
 
   def new
     @bike = Bike.find_by(identifier: params[:identifier])
@@ -38,8 +38,8 @@ class TripsController < ApplicationController
       
       if @trip.save
         # Update the bike's status or location if necessary
-        bike = Bike.find_by(identifier: params[:identifier])
-        bike.current_station.docked_bikes.delete(Bike.find_by(identifier: bike.identifier))
+        # bike = Bike.find_by(identifier: params[:identifier])
+        # bike.current_station.docked_bikes.delete(Bike.find_by(identifier: bike.identifier))
         render 'show'
       else
         render plain: "FAILED: #{@trip.errors.full_messages.join(', ')}"
