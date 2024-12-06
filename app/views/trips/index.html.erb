@@ -1,0 +1,42 @@
+<div class="stations-page">
+  <div class="section-inner flexbox vertical stretch">
+  
+    <div class="section-title">
+    <div class="header-bike-image">
+    <%= link_to root_path do %>
+    <img src="<%= asset_path('bikeLogo.png') %>" alt="Hot Pink play-dough bike"> 
+     <% end %>
+    </div>
+      <!-- center the title -->
+      <div class="stations-title">
+        Trip History
+      </div>
+
+    </div> 
+
+
+    <div style="max-width: 800px; margin: 0 auto; font-family: Arial, sans-serif;">
+
+    <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px;">
+        <thead>
+        <tr style="background-color: #e089a6e5; color: white;">
+            <th style="padding: 12px; text-align: left; border-radius: 8px 0 0 8px;">Trip ID</th>
+            <th style="padding: 12px; text-align: left;">Start Station</th>
+            <th style="padding: 12px; text-align: left;">Bike ID</th>
+            <th style="padding: 12px; text-align: left; border-radius: 0 8px 8px 0;">Start Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @trips.find_each do |trip| %>
+            <tr style="background-color: rgb(244, 239, 243); margin-bottom: 10px;">
+            <td style="padding: 12px; border-radius: 8px 0 0 8px;"><%= trip.id %></td>
+            <td style="padding: 12px;"><%= trip.start_station.name %></td>
+            <td style="padding: 12px;"><%= trip.bike_used.identifier %></td>
+            <td style="padding: 12px; border-radius: 0 8px 8px 0;"><%= trip.formatted_start_time %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
