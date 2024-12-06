@@ -84,8 +84,10 @@ class TripsController < ApplicationController
     # station = Station.find_by(params[:identifier]) 
     station.docked_bikes << bike
     @trip.update(end_time: Time.now, end_station_id: station.identifier)
+    #call the calculate price method and then update the price column with it's return value
     @trip.save
     #user is returned payment page 
+    #redirect_to payments new path with the trip object as a param and do the calculations of price
     redirect_to stations_index_path
   end 
 
