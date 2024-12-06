@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   get '/payments/cancel'
   get 'trips/create', to: 'trips#create', as:'create_trip'
   get 'trips/update', to: "trips#update", as:'update_trip'
-  get 'trips/return_bike'
+  
   resources :payments 
   
   get 'trips/index'
   get 'trips/new'
   get 'trips/show'
+  get 'trips/edit'
 
 
   
