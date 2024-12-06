@@ -197,70 +197,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Header Section */
-.mainpage-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffccd5;
-  padding: 10px 20px;
-  flex-wrap: wrap; 
-}
-
-.mainpage-logo img {
-  height: 50px; 
-  width: auto;
-}
-
-.mainpage-nav-menu {
-  display: flex;
-  gap: 15px;
-}
-
-.mainpage-nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  padding: 0;
-  margin: 0;
-}
-
-.mainpage-nav-menu li {
-  font-size: 1rem;
-}
-
-.mainpage-nav-menu a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #003366;
-  font-size: 0.9rem;
-}
-
-.mainpage-nav-menu a:hover {
-  color: #ff3366;
-}
-
-.mainpage-account-info {
-  font-size: 0.9rem;
-  color: #003366;
-  font-weight: bold;
-  text-align: right;
-  margin-right: auto; 
-}
-
-.mainpage-menu-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem; 
-  cursor: pointer;
-  margin-left: 10px; 
-}
-
-.mainpage-menu-icon {
-  color: #003366;
-  font-size: 1.2rem; 
-}
-
 
 /* Welcome Section */
 .mainpage-welcome {
@@ -291,6 +227,7 @@ body {
   height: 100vh;
   gap: 20px;
   padding: 20px;
+  background-color: #ffffff;
 }
 
 /* Map Section */
@@ -298,17 +235,17 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   background-color: #ffffff;
-  width: 100vw;
-  height: 100vh;
+  width: 50%; 
+  height: 100%; /
 }
 
 .mainpage-map-wrapper {
   flex: 1;
   width: 100%;
-  height: 400px; 
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -317,16 +254,6 @@ body {
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.mainpage-current-ride {
-  margin-top: 10px;
-  background-color: #003366;
-  color: #ffffff;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1rem;
-  text-align: center;
 }
 
 /* Search Section */
@@ -339,8 +266,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   background-color: #ffffff;
-  width: 100vw;
-  height: 100vh;
+  width: 50%; /* Takes half the width */
+  height: 100%; /* Fills the container height */
 }
 
 .mainpage-search-title {
@@ -350,31 +277,21 @@ body {
   color: #003366;
 }
 
-.mainpage-search-box {
-  position: relative;
-  width: 100%;
-}
-
-.mainpage-search-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.mainpage-search-clear-btn {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  background: none;
+.record-row2 {
+  background-color: #ffccd5;
   border: none;
-  font-size: 1.5rem;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  color: #ccc;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
+.record-row2:hover {
+  background-color: #ffb6c1;
+}
 
 
 /***********************************/
@@ -656,9 +573,6 @@ body {
   margin-top: 15px;
 }
 
-<<<<<<< HEAD
-=======
-
 .record-row {
   background-color: #d73f72e5;
   border: none;
@@ -725,7 +639,6 @@ body {
   text-align: center;
 }
 
->>>>>>> 274c7c5 (Updated error in the css page to properly render the station and bikes inventory views)
 .loginpage-button:hover {
   background-color: #002244;
 }
@@ -793,7 +706,7 @@ body {
 .record-row.odd {
   background: var(--dark-white-color);
 }
-=======
+
 .return-stations-button {
     background-color: #d73f72e5;
     border: none;
@@ -809,8 +722,6 @@ body {
     left: 30px;
     top: 30px;
 }
-
->>>>>>> a23503f (Created button/updated format in the view bike inventory to return to the stations list)
 
 /* SHOW STATIONS PAGE */
 .stations-title{
@@ -932,8 +843,7 @@ body {
     margin-bottom: .6em;
   }
 }
-<<<<<<< HEAD
-=======
+
 
 
 .grid-container {
@@ -953,4 +863,5 @@ body {
 .center-section-title{
   text-align: center;
 }
->>>>>>> 274c7c5 (Updated error in the css page to properly render the station and bikes inventory views)
+
+
