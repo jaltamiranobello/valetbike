@@ -1,7 +1,9 @@
 <div class = "white-page">
   <div class = "pink-header"> ACCOUNT & SETTINGS
     <div class="header-bike-image">
+    <%= link_to root_path do %>
     <img src="<%= asset_path('bikeLogo.png') %>" alt="Hot Pink play-dough bike"> 
+    <% end %>
     </div>
     <div class="dropdown-image">
     <img src="<%= asset_path('dropdown-image.png') %>" alt="Three hot pink lines"> 
@@ -9,7 +11,7 @@
   </div>
   <div class = "black-text"> GO TO... </div>
   <button class = "membership-button"><%= link_to("Memberships", "https://valleybike.org/")%> </button>
-  <button class = "trip-button"> <%= link_to("Trip History", trips_path)%> </button>
+  <button class = "trip-button"> <%= link_to("Trip History", trips_index_path)%> </button>
 
   <!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
   <div class = "profile-info">
