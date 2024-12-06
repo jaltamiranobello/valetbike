@@ -50,19 +50,23 @@ class TripsController < ApplicationController
     end
   end
 
+  def edit 
+    @stations = Station.all.order(identifier: :asc)
+    if Trip.find_by_id(params[:id]).present?
+      @trip = Trip.find_by_id(params[:id])
+      @bike = Bike.find_by(identifier: @trip.bike_used); 
+    end
+
+  end
+
   def update
-    # get station from identifier
-    # set the end station
-    # set the end time
-    # trip.price = calculate_price(trip_id)
-    # send in the trip id with path
+    station = Station.find_by(params[:identifier]) 
+    station.docked_bikes << Bike.find_by(identifier: Trip.find_by_id(params[:id]).bike_used)
+    Trip.find_by_id(params[:id]).update(end_time: Time.now, end_station_id: station.identifier)
+    Trip.find_by_id(params[:id]).save
+    #user is returned payment page 
     redirect_to new_payment_path
   end 
-
-  # shows a list of stations in order to choose a station to end at
-  def return_bike
-    @stations = Station.all.order(identifier: :asc)
-  end
 
   def calculate_price(trip_id)
     trip = Trip.find_by(id: trip_id)
