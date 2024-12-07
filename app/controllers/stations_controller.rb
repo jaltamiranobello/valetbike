@@ -1,6 +1,5 @@
 class StationsController < ApplicationController
-  
-  
+
   def index
     @stations = Station.all.order(identifier: :asc)
   end
@@ -10,6 +9,5 @@ class StationsController < ApplicationController
     @current_station = Station.find_by(identifier: params[:identifier])
     @bikes = Bike.where(current_station_id: @current_station.identifier)
   end
-  
 
 end

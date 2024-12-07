@@ -1,20 +1,10 @@
-
-<div class = "pink-header"> BOOK YOUR BIKE
-  <div class="header-bike-image">
-    <%= link_to root_path do %>
-    <img src="<%= asset_path('bikeLogo.png') %>" alt="Hot Pink play-dough bike"> 
-    <% end %>
-  </div>
-  <div class="dropdown-image">
-    <img src="<%= asset_path('dropdown-image.png') %>" alt="Three hot pink lines"> 
-  </div>
-</div>
-
 <div class="bookRide-container">
 
   <h1 class="bookRide-title">Book Your Ride</h1>
+
   <p>Booking from <span class="bookRide-station-name"> <%= @bike.current_station.name %></span> Station</p> 
   <%= link_to "<button class='bookRide-btn bookRide-change-station'>Change Station</button>".html_safe, stations_index_path %>
+  
   <!-- <h2 class="bookRide-step">1. Choose a bike</h2> -->
   <p>Booking Bike ID: <span class="bookRide-station-name"> <%= @bike.identifier %></span></p> 
   <%= link_to "<button class='bookRide-btn bookRide-change-station'>Change Bike</button>".html_safe, stations_show_path(identifier: @bike.current_station.identifier )%>
