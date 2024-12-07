@@ -53,7 +53,7 @@ class TripsController < ApplicationController
   def edit 
     @stations = Station.all.order(identifier: :asc)
     if Trip.find_by_id(params[:id]).present?
-      @trip = Trip.find_by(id: current_user.id)
+      @trip = Trip.find_by(user_id: current_user.id)
       @bike = Bike.find_by(identifier: @trip.bike_used); 
     end
 
@@ -84,17 +84,17 @@ class TripsController < ApplicationController
     # station = Station.find_by(params[:identifier]) 
     station.docked_bikes << bike
     @trip.update(end_time: Time.now, end_station_id: station.identifier)
-    #call the calculate price method and then update the price column with it's return value
+    @trip.update(price: calculate_price(@trip.id))
     @trip.save
     #user is returned payment page 
     #redirect_to payments new path with the trip object as a param and do the calculations of price
-    redirect_to stations_index_path
+    redirect_to new_payment_path(param_1: @trip.id)
   end 
 
   def calculate_price(trip_id)
     trip = Trip.find_by(id: trip_id)
     rideTime = trip.end_time - trip.start_time
-    rideTime * 0.25
+    rideTime * 0.004166666667
   end 
 
 end
