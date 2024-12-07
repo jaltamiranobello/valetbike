@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-USER FIRSTNAME: <%= current_user.firstName %>
-<br> USER ID: <%= @trip.user_id %><br>
-TRIP ID: <%= @trip.id %> <br>
-Time Start: <%=@trip.formatted_start_time %> <br>
-YOU ARE CURRENTLY RIDING <%= @bike_used_id %>
+<div class="stations-page">
+  <div class="section-inner flexbox vertical stretch">
+    <div class="section-title">
+        <div class="stations-title">
+        RIDE ON!
+        </div>
+        <div class = "profile-info">
+            <div class = "pink-title"> CURRENT TRIP INFORMATION</div>
+            RENTED BY: <%= current_user.firstName%> <%= current_user.lastName%> <br>
+            TRIP ID: <%= @trip.id %> <br>
+            BIKE ID: <%= @trip.bike_used_id %> <br>
+            START STATION: <%= @trip.start_station_id %> <br>
+            START TIME: <%=@trip.formatted_start_time %> <br>
+        
 
-<p><%= link_to('End Trip', 'edit') %></p>
-     
+            <p><%= link_to('End Trip', 'edit') %></p>
+        </div>
+    </div>
+	</div>
+</div>  
 </html>
