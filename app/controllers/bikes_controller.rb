@@ -8,6 +8,10 @@ class BikesController < ApplicationController
     @bike = Bike.find_by(current_station_id: params[:current_station_id])
   end
 
+  
+  def edit
+    @bike = Bike.find(params[:id])
+  end
 
   
 end
