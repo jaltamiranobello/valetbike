@@ -1,7 +1,7 @@
 # Run the command rake db:import_stations
 namespace :db do
 
-    desc "Creates the database from the data in "
+    desc "Creates the database from the data in notes/station-data.csv"
 
     task :import_stations => :environment do |task|
         require 'csv'
