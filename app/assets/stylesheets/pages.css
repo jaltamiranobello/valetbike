@@ -936,6 +936,68 @@ body {
   color: #555;
 }
 
+
+/***********************************/
+/*     Payment Success Page        */
+/***********************************/
+
+.confirmation-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  height: 100vh; 
+  background-color: #ffffff; 
+
+  .left-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; 
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+      color: #0b5394;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .go-back-button {
+      display: inline-block;
+      background-color: #0b5394;
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #073763;
+      }
+    }
+  }
+}
+
+
+
+
+
+
 /***********************************/
 /*         Responsiveness          */
 /***********************************/
