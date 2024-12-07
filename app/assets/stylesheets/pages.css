@@ -936,6 +936,207 @@ body {
   color: #555;
 }
 
+/***********************************/
+/*     Trip Show Page        */
+/***********************************/
+.show-trip-body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.show-trip-wrapper {
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.show-trip-header {
+  width: 100%;
+  height: 25%;
+  background-color: #ff007f;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.show-trip-message {
+  width: 90%;
+  padding: 20px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.show-trip-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 90%;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.show-trip-detail {
+  background-color: #fce4ec; 
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff007f;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+}
+
+.show-trip-actions {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.show-trip-end-trip-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.show-trip-end-trip-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+/***********************************/
+/*     Payment New Page        */
+/***********************************/
+
+/* Container for the whole page */
+.paypage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #004b87; 
+  margin: 0;
+}
+
+/* Outer card container */
+.paypage-card {
+  background-color: #87c8f5;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 60%;
+  height: 80%;
+  box-sizing: border-box;
+}
+
+/* Header section for the trip cost title */
+.paypage-header {
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.paypage-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Price section */
+.paypage-price {
+  background-color: white;
+  padding: 20px;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.paypage-price h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Button container with a green border */
+.paypage-button-container {
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Button styling */
+.paypage-button {
+  padding: 15px 40px;
+  background-color: #00aaff;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.paypage-button:hover {
+  background-color: #0088cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .paypage-title {
+    font-size: 1.5rem;
+  }
+
+  .paypage-price h3 {
+    font-size: 2rem;
+  }
+
+  .paypage-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .paypage-title {
+    font-size: 1.2rem;
+  }
+
+  .paypage-price h3 {
+    font-size: 1.8rem;
+  }
+
+  .paypage-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
 
 /***********************************/
 /*     Payment Success Page        */

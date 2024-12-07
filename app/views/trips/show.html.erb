@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <html>
-<div class="stations-page">
-  <div class="section-inner flexbox vertical stretch">
-    <div class="section-title">
-        <div class="stations-title">
-        RIDE ON!
-        </div>
-        <div class = "profile-info">
-            <div class = "pink-title"> CURRENT TRIP INFORMATION</div>
-            RENTED BY: <%= current_user.firstName%> <%= current_user.lastName%> <br>
-            TRIP ID: <%= @trip.id %> <br>
-            BIKE ID: <%= @trip.bike_used_id %> <br>
-            START STATION: <%= @trip.start_station_id %> <br>
-            START TIME: <%=@trip.formatted_start_time %> <br>
-        
+  <head>
+    <title>Ride Confirmation</title>
+    <link rel="stylesheet" href="/assets/pages.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body class="show-trip-body" onload="startConfetti()">
+    <div class="show-trip-wrapper">
+      <!-- Header Section -->
+      <div class="show-trip-header">
+        RIDE ON <%= current_user.firstName %>
+      </div>
+      
+      <!-- Confirmation Message Section -->
+      <div class="show-trip-message">
+        <p>Your ride has been confirmed!<br>
+        Make sure to familiarize yourself with your bike and its safety features before you hit the road.</p>
+      </div>
+      
+      <!-- Details Section -->
+      <div class="show-trip-details">
+        <div class="show-trip-detail"><strong>TIME START:</strong> <%= @trip.formatted_start_time %></div>
+        <div class="show-trip-detail"><strong>TRIP ID:</strong> <%= @trip.id %></div>
+        <div class="show-trip-detail"><strong>USER ID:</strong> <%= @trip.user_id %></div>
+      </div>
+      
+      <!-- Action Section -->
+      <div class="show-trip-actions">
+        <%= link_to('END TRIP', 'edit', class: 'show-trip-end-trip-btn') %>
+        <button onclick="startConfetti()" style="position: fixed; bottom: 20px; right: 20px;">Start Confetti</button>
 
-            <p><%= link_to('End Trip', 'edit') %></p>
-        </div>
+      </div>
     </div>
-	</div>
-</div>  
+
+    <script>
+      function startConfetti() {
+        const duration = 5 * 1000; // 5 seconds
+        const end = Date.now() + duration;
+
+        (function frame() {
+          confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+          });
+          confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        })();
+      }
+    </script>
+  </body>
 </html>

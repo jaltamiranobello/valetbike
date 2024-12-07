@@ -1,5 +1,14 @@
-<div>
-  <h1>Pay for Trip. Cost : $ <%= @tripPrice.to_f/100 %> </h1>
-  <li><%= link_to("Pay", @paymentLink.url) %></li>
-
+<div class="paypage-container">
+  <div class="paypage-card">
+    <div class="paypage-header">
+      <h2 class="paypage-title">TRIP COST</h2>
+    </div>
+    <div class="paypage-price">
+      <h3>$<%= @tripPrice.to_f / 100 %></h3>
+    </div>
+    <div class="paypage-button-container">
+      <%= link_to "CLICK HERE TO PAY", @paymentLink.url, class: "paypage-button" %>
+    </div>
+  </div>
 </div>
+
