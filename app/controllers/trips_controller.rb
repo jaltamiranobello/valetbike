@@ -11,6 +11,7 @@ class TripsController < ApplicationController
     @trip = Trip.find_by(identifier: params[:identifier])
   end
 
+  # the associated view displays the confirmation page 
   def new
     @bike = Bike.find_by(identifier: params[:identifier])
     if @bike
@@ -26,6 +27,7 @@ class TripsController < ApplicationController
     end
   end
 
+  # processes the information from the confirmation page and creates a new trip
   def create
     @bike = Bike.find_by(identifier: params[:identifier])
     if @bike
@@ -50,15 +52,16 @@ class TripsController < ApplicationController
     end
   end
 
+  # associated view displays a list of stations at which to 
   def edit 
     @stations = Station.all.order(identifier: :asc)
     if Trip.find_by_id(params[:id]).present?
       @trip = Trip.find_by(user_id: current_user.id)
       @bike = Bike.find_by(identifier: @trip.bike_used); 
     end
-
   end
 
+  # processes the end trip form and updates the trip information 
   def update
     @trip = Trip.where(user_id: current_user.id).order(created_at: :desc).first
   
@@ -91,9 +94,11 @@ class TripsController < ApplicationController
     redirect_to new_payment_path(param_1: @trip.id)
   end 
 
+  # calculate the trip price based on the time elapsed
   def calculate_price(trip_id)
     trip = Trip.find_by(id: trip_id)
     rideTime = trip.end_time - trip.start_time
+    # the ride time is in minutes, so we divide by 60 and then multiply by 0.25
     rideTime * 0.004166666667
   end 
 
