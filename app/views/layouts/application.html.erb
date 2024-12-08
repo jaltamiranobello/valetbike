@@ -23,7 +23,7 @@
       <span class="valetbike">VALETBIKE</span>
       <div class="nav-links">
         <%= link_to "Rent a Bike", "/trips/new?identifier=7522", class: "rent-a-bike-link" %>
-        <%= link_to "Trip History", "/trips/index", class: "rent-a-bike-link" %>
+        <%= link_to "Trip History", "/trips/new?identifier=7522", class: "rent-a-bike-link" %>
         <div class="dropdown">
           <button class="dropbtn"><%= link_to "My Account", edit_user_registration_path %></button>
           <div class="dropdown-content">
@@ -42,6 +42,7 @@
     <footer class="footer">
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="<%= root_path %>">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="<%= team_path %>">Team</a></li>
         <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
       </ul>
       <p>&copy;2024 ValetBike | All Rights Reserved</p>

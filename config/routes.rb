@@ -35,5 +35,8 @@ Rails.application.routes.draw do
 
   root to: "home#main"
 
+  get 'team', to: 'team#index'
+
+
 
 end

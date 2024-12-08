@@ -392,7 +392,7 @@ body {
 .mapsearch-input-wrapper {
   display: flex;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid #1a73e8;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -1121,6 +1121,103 @@ body {
     }
   }
 }
+
+
+/***********************************/
+/*         Meet The Team Page       */
+/***********************************/
+
+
+.blue-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d80555;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden; 
+}
+
+.blue-section h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.blue-section img {
+  max-width: 70%; 
+  max-height: calc(100vh - 100px); 
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.white-section {
+  background-color: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: space-evenly; 
+  align-items: flex-start;
+  gap: 15px;
+  overflow-x: auto; 
+}
+
+.team-card {
+  background-color: #d80555;
+  color: #d80555;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 220px; 
+  text-align: center;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; 
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.team-card h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #ffccd5; 
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%; 
+}
+
+.team-card p {
+  color: white;
+  margin: 5px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal; 
+}
+
+@media (max-width: 600px) {
+  .white-section {
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+
+  .team-card {
+    width: 90%; 
+  }
+}
+
+
 
 /***********************************/
 /*         Responsiveness          */
