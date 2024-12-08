@@ -5,7 +5,7 @@ class MapTestController < ApplicationController
         user_location = Geocoder.search(params[:location]).first&.coordinates
   
         if user_location
-          # Find the nearest stations within a 10 km radius
+          # Find the nearest stations 
           @stations = Station.near(user_location, 10).limit(3)
         else
           @stations = []
