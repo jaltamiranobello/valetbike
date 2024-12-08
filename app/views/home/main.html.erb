@@ -5,66 +5,34 @@
 
 <% if user_signed_in? %>
 
-  <!-- Header Section -->
-  <div class="mainpage-header">
-    <div class="mainpage-logo">
-      <%= link_to root_path do %>
-      <%= image_tag "bikeLogo.png", alt: "ValetBike Logo" %>
-      <% end %>
-    </div>
-
-  <!--  <nav class="mainpage-nav-menu">
-      <ul>
-        <li><%= link_to("Rent a Bike", trips_new_path) %></li>
-      </ul>
-    </nav>
-  -->
-
-    <div class="mainpage-account-info">
-       <ul>
-          <li><%= link_to("My Account", {controller: '/devise/registrations', action: 'edit'}) %></li>
-       </ul>
-    </div>
-  </div>
-
   <!-- Welcome Section -->
-  <div class="mainpage-welcome">
-    <h1>Welcome to ValetBike, <%= current_user.firstName %></h1>
-  </div>
 
-  <!-- Map and Search Section -->
   <div class="mainpage-map-search-container">
-    
     <!-- Map Section -->
     <div class="mainpage-map-container">
-      <h3 class="mainpage-map-title">MAP OF STATIONS</h3>
-      <div class="mainpage-map-wrapper">
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1DYEf2WcpIdAdxegfdgMGlekzDBfWPFc&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-      <!-- <iframe 
-          class="mainpage-map-iframe" 
-          frameborder="0" 
-          src="https://www.google.com/maps/embed/v1/place?q=Northampton,+MA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
-       </iframe> -->
-      </div>
-      <div class="mainpage-current-ride">
-        <span>CURRENT RIDE: </span><span>10:00</span>
-      </div>
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1DYEf2WcpIdAdxegfdgMGlekzDBfWPFc&ehbc=2E312F&noprof=1"
+          class="mainpage-map-iframe"
+          allowfullscreen
+          loading="lazy"></iframe>
+
     </div>
 
-    <!-- Search Section -->
+  <!-- Search Section -->
     <div class="mainpage-search">
-      <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
-      <!-- <div class="mainpage-search-box">
-        <input type="text" placeholder="Enter location" class="mainpage-search-input">
-        <button class="mainpage-search-clear-btn">×</button>
+      <div class="mainpage-welcome">
+        <h1>Welcome to ValetBike, <%= current_user.firstName %></h1>
       </div>
-      -->
-      <%= link_to "<button class = 'record-row2'> VIEW STATIONS </button>".html_safe, stations_index_path %>
+
+      <h3 class="mainpage-search-title">FIND A STATION NEAR YOU</h3>
+      <%= link_to "VIEW STATIONS", stations_index_path, class: "big-button" %>
     </div>
-    
+
+
   </div>
 
 
+</div>
 
  
 <!-- Welcome Page -->
@@ -147,19 +115,26 @@
             <h2>Frequenly Asked Questions</h2>
             
             <div class="faq-content">
-            <button class="accordion">Section 1</button>
+            <button class="accordion">How much does it cost to use Valet Bike?</button>
             <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Valet Bike offers various pricing options to suit your needs, including pay-per-ride and monthly or annual memberships. <br>
+              Pay-per-ride rates start at $2.50 for the first 30 minutes. Additional charges apply for extended rides. </p>
             </div>
             
-            <button class="accordion">Section 2</button>
+            <button class="accordion">How can I end my trip?</button>
             <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>
+            
+              Properly ending your trip helps maintain the system's efficiency and prevents additional charges.<br>
+              <b>Park at a Designated Hub: </b> Locate and return the bike to an official Valet Bike station. <br>
+              <b>Secure the Bike: </b> Wrap the tether around the bike rack and insert it into the closed wheel lock to ensure it's properly locked.<br>
+              <b>End the Trip in the App: </b> Follow the app's instructions to finalize your trip. This may include taking a photo to confirm the bike is correctly secured.<br>
+              </p>
             </div>
             
-            <button class="accordion">Section 3</button>
+            <button class="accordion">Why Use ValleyBike?</button>
             <div class="panel">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>It’s the fastest, most affordable, and eco-friendly way to get around. Skip the traffic, save money, stay active, and help create a greener future—all with just one ride.</p>
             </div>
             
             <script>

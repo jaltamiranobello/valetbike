@@ -185,7 +185,6 @@
   color: #333;
   font-size: 1.2rem;
 }
-
 /* Frequently Asked Question */
 
 .faq-content {
@@ -213,6 +212,9 @@
 
 .active, .accordion:hover {
   background-color: #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+
 }
 
 .panel {
@@ -220,6 +222,18 @@
   background-color: white;
   display: none;
   overflow: hidden;
+  border-left: 4px solid #000000;
+  margin-bottom: 10px;
+
+
+}
+
+.panel p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2b2b2b;
+  line-height: 1.6;
+  text-align: left;
 }
 
 /***********************************/
@@ -233,71 +247,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Header Section */
-.mainpage-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffccd5;
-  padding: 10px 20px;
-  flex-wrap: wrap; 
-}
-
-.mainpage-logo img {
-  height: 50px; 
-  width: auto;
-}
-
-.mainpage-nav-menu {
-  display: flex;
-  gap: 15px;
-}
-
-.mainpage-nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  padding: 0;
-  margin: 0;
-}
-
-.mainpage-nav-menu li {
-  font-size: 1rem;
-}
-
-.mainpage-nav-menu a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #003366;
-  font-size: 0.9rem;
-}
-
-.mainpage-nav-menu a:hover {
-  color: #ff3366;
-}
-
-.mainpage-account-info {
-  font-size: 0.9rem;
-  color: #003366;
-  font-weight: bold;
-  text-align: right;
-  margin-right: auto; 
-}
-
-.mainpage-menu-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem; 
-  cursor: pointer;
-  margin-left: 10px; 
-}
-
-.mainpage-menu-icon {
-  color: #003366;
-  font-size: 1.2rem; 
-}
-
-
 /* Welcome Section */
 .mainpage-welcome {
   text-align: center;
@@ -309,6 +258,7 @@ body {
   font-size: 1.8rem;
   color: #003366;
   margin-bottom: 10px;
+  font-style: bold;
 }
 .mainpage-map-title{
   font-size: 1.8rem;
@@ -317,16 +267,19 @@ body {
   text-align: center;
 }
 
-/* Map and Search Container */
+.site-container {
+  flex: 1;
+  margin-top: 50px; 
+  background-color: #ffffff;
+}
+
+/* Map and Search Section */
 .mainpage-map-search-container {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: stretch;
-  width: 100vw;
-  height: 100vh;
-  gap: 20px;
-  padding: 20px;
+  width: 100%;
+  height: calc(100vh - 120px); 
 }
 
 /* Map Section */
@@ -334,17 +287,14 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  border-radius: 10px;
   background-color: #ffffff;
-  width: 100vw;
-  height: 100vh;
+  height: 100%; 
 }
 
 .mainpage-map-wrapper {
   flex: 1;
   width: 100%;
-  height: 400px; 
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -355,14 +305,23 @@ body {
   border: 0;
 }
 
-.mainpage-current-ride {
-  margin-top: 10px;
-  background-color: #003366;
-  color: #ffffff;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1rem;
+.big-button {
+  display: inline-block;
+  background-color: #ff69b4; 
+  color: white;
   text-align: center;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.big-button:hover {
+  background-color: #ff1493; 
+  transform: scale(1.05);
 }
 
 /* Search Section */
@@ -373,44 +332,17 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border-radius: 10px;
   background-color: #ffffff;
-  width: 100vw;
-  height: 100vh;
+  width: 50%; 
+  height: 100%; 
 }
 
 .mainpage-search-title {
-  font-size: 1.5rem;
+  font-size: 2.7rem;
   font-weight: bold;
   margin-bottom: 10px;
   color: #003366;
 }
-
-.mainpage-search-box {
-  position: relative;
-  width: 100%;
-}
-
-.mainpage-search-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.mainpage-search-clear-btn {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #ccc;
-}
-
 
 
 /***********************************/
@@ -447,6 +379,62 @@ body {
   justify-content: center;
   height: 100vh;
   box-sizing: border-box;
+}
+
+.login-form-inner-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.login-form-inner-container h2 {
+  margin-bottom: 20px;
+  font-size: 4rem;
+}
+
+.login-form-inner-container h3 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.field {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.input-field {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: #000;
+  background-color: transparent;
+}
+
+.input-field::placeholder {
+  color: #999;
+}
+
+.input-field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.loginpage-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
 /***********************************/
@@ -524,7 +512,158 @@ body {
 /*         Account & Settings      */
 /***********************************/
 
-.pink-header{
+
+.profile-info {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 30px; 
+  margin-bottom: 30px; 
+  border-radius: 30px; 
+  background-color: #fbe0e4;
+  width: 80vw;
+  text-align: center;
+  padding: 30px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.registration-field {
+  margin: 15px 0;
+  color: black;
+}
+
+.registration-field input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.pink-title {
+  font-family: 'monaco', monospace;
+  color: #ff0055;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px; 
+}
+
+.update-button {
+  display: inline-block;
+  border: 1px solid #b9b9b9; 
+  padding: 14px 40px;
+  color: black;
+  background-color: #ffffff; 
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 20px 10px; 
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+  background-color: #d3d3d3; 
+}
+
+.delete-account-button,
+.logout-button {
+  display: inline-block;
+  padding: 14px 40px;
+  color: white;
+  background-color: #1f4a91;
+  border: 1px solid #1f4a91;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 20px 10px; 
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.delete-account-button:hover,
+.logout-button:hover {
+  background-color: #17366d; 
+}
+
+.return-link {
+  display: inline-block;
+  background-color: #ff0055;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 20px 10px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.return-link:hover {
+  background-color: #cc0044; 
+}
+
+.record-row {
+  background-color: #d73f72e5;
+  border: none;
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.70em;
+  line-height: 1.75em;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.record-row:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* this is alings two given buttons to the center */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+
+/* this is for the show button */
+.record-row2 {
+  background-color: #e089a6e5;
+  border: solid white;
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.70em;
+  line-height: 1.75em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+}
+
+.return-stations-button {
+    background-color: #d73f72e5;
+    border: none;
+    padding: 0.5em 1.25em 0.5em 1.25em;
+    font-size: 1.0em;
+    line-height: 1.75em;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 200px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+
+/***********************************/
+/*         SHOW STATIONS PAGE        */
+/***********************************/
+/* SHOW STATIONS PAGE */
+.stations-title{
   background-color: #ffccd5;
   font-family: 'monaco', monospace;
   color: #ff0055;
@@ -532,164 +671,7 @@ body {
   font-weight: bold;
   height: 10vh;
   width: 100vw;
-  text-align: center; 
-}
-
-.white-page{
-  height: 200vh;
-  width: 100vw;
-}
-
-.header-bike-image{
-  position: absolute;
-  top: 0px;
-  left: 30px;
-  width: 5%; 
-  height: 10%;
-}
-
-.dropdown-image{
-  position: absolute;
-  top: 15px;
-  right: 30px;
-  width: 3%; 
-  height: 5%;
-}
-
-.black-text{
-  font-family: 'monaco', monospace;
-  color: black;
-  font-size: 3.0rem;
-  font-weight: bold;
-  position: relative;
-  left: 30px;
-}
-
-.membership-button{
-  border: 1px solid #1f4a91;
-  padding: 14px 40px;
-  background-color: #1f4a91;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  position: relative;
-  left: 40px;
-  
-}
-
-.trip-button{
-  border: 1px solid #1f4a91;
-  padding: 14px 40px;
-  background-color: #1f4a91;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  position: relative;
-  left: 80px;
-}
-
-.profile-info{
-  position: relative;
-  left: 120px;
-  top: 20px;
-  border-radius: 100px;
-  background-color: #fbe0e4;
-  height: 65vh;
-  width: 80vw;
   text-align: center;
-}
-
-.registration-field{
-  color: black
-}
-.pink-title{
-  font-family: 'monaco', monospace;
-  color: #ff0055;
-  font-size: 2.0rem;
-  font-weight: bold;
-}
-
-.delete-account-button{
-  border: 1px solid #1f4a91;
-  padding: 14px 40px;
-  color: white;
-  background-color: #1f4a91;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 200px;
-  position: relative;
-  top: 50px;
-  left: 40px;
-}
-
-.logout-button{
-  text-align: center;
-  border: 1px solid #1f4a91;
-  padding: 14px 40px;
-  color: white;
-  background-color: #1f4a91;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 200px;
-  position: relative;
-  top: 0px;
-  left: 275px;
-}
-
-.login-form-inner-container {
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  padding: 20px;
-  color: white;
-  border-radius: 10px;
-}
-
-.login-form-inner-container h2 {
-  margin-bottom: 20px;
-  font-size: 4rem;
-}
-
-.login-form-inner-container h3 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-
-.field {
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.input-field {
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 1.2rem;
-  color: #000;
-  background-color: transparent;
-}
-
-.input-field::placeholder {
-  color: #999;
-}
-
-.input-field:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.loginpage-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 15px;
 }
 
 
@@ -746,6 +728,44 @@ body {
     top: 30px;
 }
 
+.loginpage-button:hover {
+  background-color: #002244;
+}
+
+/***********************************/
+/*         Stations Page          */
+/***********************************/
+
+.station-button {
+  padding: 0.5em 1.25em 0.5em 1.25em;
+  font-size: 0.85em;
+  line-height: 1.75em;
+  border-radius: 25px;
+}
+
+.record-row.even {
+  background: var(--medium-white-color);
+}
+
+.record-row.odd {
+  background: var(--dark-white-color);
+}
+
+.return-stations-button {
+    background-color: #d73f72e5;
+    border: none;
+    padding: 0.5em 1.25em 0.5em 1.25em;
+    font-size: 1.0em;
+    line-height: 1.75em;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 200px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
 
 /* SHOW STATIONS PAGE */
 .stations-title{
@@ -759,87 +779,98 @@ body {
   text-align: center;
 }
 
-.loginpage-button:hover {
-  background-color: #002244;
+.stations-page{
+  height: 100vh;
+  width: 100vw;
 }
 
 /***********************************/
-/*         Forgot Password          */
+/*         Book Ride Page          */
 /***********************************/
-/* Container */
-.forgot-password-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #e6f7ff; /* Very light blue background */
-  padding: 20px;
+.bookRide-container {
   text-align: center;
+  margin: 20px auto;
+  width: 80%;
+  height: 80vh;
+  background-color: #fbe0e4;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  align-content: center;
 }
 
-/* Title */
-.forgot-password-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #004080; /* Medium blue */
-  margin-bottom: 20px;
+.bookRide-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 10px;
 }
 
-/* Form */
-.forgot-password-form {
-  width: 100%;
-  max-width: 350px;
+.bookRide-station-name {
+  font-weight: bold;
+  color: #007bff;
 }
 
-.input-field {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #b3d9ff; /* Subtle light blue border */
-  border-radius: 5px;
+.bookRide-btn {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 15px;
   font-size: 1rem;
-  background-color: #ffffff; /* White background for input */
-  color: #004080; /* Medium blue for text */
-}
-
-.input-field::placeholder {
-  color: #99c2ff; /* Light blue placeholder */
-}
-
-.input-field:focus {
-  border-color: #3399ff; /* Slightly brighter blue on focus */
-  outline: none;
-  box-shadow: none;
-}
-
-/* Submit Button */
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: white;
-  background-color: #0066cc; /* Solid blue button */
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
-  background-color: #004d99; /* Slightly darker blue on hover */
+.bookRide-change-station {
+  background-color: #007bff;
+  color: white;
 }
 
-/* Minimal Links */
-.forgot-password-container a {
-  font-size: 0.9rem;
-  color: #0066cc;
-  text-decoration: none;
-  margin-top: 15px;
+.bookRide-primary {
+  background-color: #4caf50;
+  color: white;
 }
 
-.forgot-password-container a:hover {
-  text-decoration: underline;
+.bookRide-secondary {
+  background-color: #ffc107;
+  color: black;
+}
+
+.bookRide-form-group {
+  margin-bottom: 15px;
+}
+
+.bookRide-form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.bookRide-form-input {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.bookRide-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bookRide-step {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.bookRide-instructions {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 .stations-page{
@@ -1212,7 +1243,6 @@ body {
     font-size: 1.9em;
     margin-bottom: .6em;
   }
-
 }
 
 
@@ -1233,3 +1263,5 @@ body {
 .center-section-title{
   text-align: center;
 }
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meet the Team</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .blue-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #d80555;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        height: 100vh;
+        overflow: hidden; 
+      }
+      
+      .blue-section h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
+      
+      .blue-section img {
+        max-width: 70%; 
+        max-height: calc(100vh - 100px); 
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      }
+      
+      
+      .white-section {
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .team-card {
+        background-color: #d80555;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        width: 150px;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-card h2 {
+        margin: 10px 0;
+        font-size: 1.2rem;
+      }
+
+      .team-card p {
+        margin: 5px 0;
+        font-size: 0.9rem;
+      }
+
+      /* Media Query for Small Screens */
+      @media (max-width: 600px) {
+        .team-card {
+          width: 90%; 
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blue-section">
+      <h1>Meet the Team</h1>
+      <%= image_tag("team.JPG", alt: "Team Image", class: "team-image") %>
+    </div>
+
+    <div class="white-section">
+      <div class="team-card">
+        <h2>Maggie</h2>
+        <p>email@example.com</p>
+        <p>Information</p>
+      </div>
+      <div class="team-card">
+        <h2>Nafisa</h2>
+        <p>email@example.com</p>
+        <p>Information</p>
+      </div>
+      <div class="team-card">
+        <h2>Fernanda</h2>
+        <p>email@example.com</p>
+        <p>Information</p>
+      </div>
+      <div class="team-card">
+        <h2>Mackenzie</h2>
+        <p>email@example.com</p>
+        <p>Information</p>
+      </div>
+      <div class="team-card">
+        <h2>Maria</h2>
+        <p>email@example.com</p>
+        <p>Information</p>
+      </div>
+    </div>
+  </body>
+</html>

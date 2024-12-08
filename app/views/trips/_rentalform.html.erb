@@ -3,11 +3,15 @@
 <!-- Displays stations on the end trip page -->
 
     <div class="record-row  flexbox vertical stretch">
-        <%= station.name %> <br> Total Bikes:<%= station.docked_bikes.count%>
-        <% @identifier = station.identifier %>
+    <%= station.name %> <br> Total Bikes:<%= station.docked_bikes.count%>
+    <% @identifier = station.identifier %>
+
+    <div class="button-container" style="display: flex; gap: 10px;">
         
-        <%= link_to update_trip_path(identifier: station.identifier) do %>
+        <%= link_to trips_index_path(identifier: station.identifier) do %>
             <button id="return-bike-btn" class="record-row2">Select Station</button>
         <% end %>
     </div>
+    </div>
+
 </html>
