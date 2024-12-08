@@ -359,12 +359,12 @@ body {
 .mapsearch-form-container {
   width: 40%;
   padding: 20px;
-  display: flex; /* Enables Flexbox */
-  flex-direction: column; /* Stacks child elements vertically */
-  align-items: center; /* Centers child elements horizontally */
-  justify-content: center; /* Centers child elements vertically */
-  height: 100vh; /* Ensure it takes full viewport height */
-  text-align: center; /* Centers the text inside each child element */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
+  text-align: center; 
 }
 
 .mapsearch-welcome h1 {
