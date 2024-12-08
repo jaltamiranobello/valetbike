@@ -1,24 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "custom", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet" type="text/css">
-    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet" type="text/css" />
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
     <title>ValetBike</title>
   </head>
   <body>
-    <p class="notice"><%= notice %></p> 
-    <p class="alert"><%= alert %></p> 
-    <div id="site-container" class="flexbox vertical stretch flex-1">
-      <div class="flexbox vertical center">
-        <%= yield %>
+  <!-- Navbar -->
+  <% if user_signed_in? %>
+    <div class="topnav">
+      <%= image_tag("bikeLogo.png", alt: "Logo", class: "logo") %>
+      <span class="valetbike">VALETBIKE</span>
+      <div class="nav-links">
+        <%= link_to "Rent a Bike", "/trips/new?identifier=7522", class: "rent-a-bike-link" %>
+        <%= link_to "Trip History", "/trips/index", class: "rent-a-bike-link" %>
+        <div class="dropdown">
+          <button class="dropbtn"><%= link_to "My Account", edit_user_registration_path %></button>
+          <div class="dropdown-content">
+            <a ><%= button_to "Logout", destroy_user_session_path, method: :delete %></a>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  <% end %>
+
+  <!-- Main Content -->
+  <div id="site-container">
+    <%= yield %>
+    <!-- Footer -->
+    <% if user_signed_in? %>
+    <footer class="footer">
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="<%= root_path %>">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+      </ul>
+      <p>&copy;2024 ValetBike | All Rights Reserved</p>
+    </footer>
+    <% end %>
+  </div>
+
+
+</body>
 </html>

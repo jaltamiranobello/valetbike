@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'trips/edit'
 
 
+  get 'map-test', to: 'map_test#index', as: 'map_test'
   
   # get 'trips/new'
 
@@ -33,5 +34,6 @@ Rails.application.routes.draw do
   get 'users/delete_account'
 
   root to: "home#main"
+
 
 end

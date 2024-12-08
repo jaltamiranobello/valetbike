@@ -1,0 +1,81 @@
+<div class="mapsearch-container">
+  <!-- Left Section: Map -->
+  <div class="mapsearch-map">
+    <div id="map" style="width: 100%; height: 100%;"></div>
+  </div>
+
+  <!-- Right Section: Search Form -->
+  <div class="mapsearch-form-container">
+    <div class="mapsearch-welcome">
+      <h1>Welcome</h1>
+    </div>
+    <div class="mapsearch-instruction">
+      <h2>Find a Station Near You</h2>
+    </div>
+    <div class="mapsearch-form">
+      <form action="<%= map_test_path %>" method="get">
+        <label for="location" class="sr-only">Enter Your Address:</label>
+        <div class="mapsearch-input-wrapper">
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="e.g., 123 Main Street"
+            required
+          />
+          <button type="submit">
+            <i class="fa fa-search"></i> Search
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Show nearby stations only if a search has been performed -->
+    <% if params[:location].present? && @stations.present? %>
+      <h2>Nearby Stations</h2>
+      <ul>
+        <% @stations.each do |station| %>
+          <li>
+            <strong><%= station.name %></strong><br>
+            Address: <%= station.address %><br>
+            Distance: <%= station.distance_to(params[:location]).round(2) %> km
+          </li>
+        <% end %>
+      </ul>
+    <% elsif params[:location].present? && @stations.empty? %>
+      <p>No nearby stations found.</p>
+    <% end %>
+  </div>
+</div>
+
+
+<script>
+  function initMap() {
+    // Initialize the map with a default center and zoom
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 42.3197, lng: -72.6319 }, // Replace with your default location
+      zoom: 12,
+    });
+
+    // Load stations only if a search has been performed
+    const stations = <%= @stations.present? ? raw(@stations.to_json) : '[]' %>;
+
+    // Add markers dynamically for nearby stations if available
+    stations.forEach((station) => {
+      new google.maps.Marker({
+        map: map,
+        position: { lat: station.latitude, lng: station.longitude },
+        title: station.name,
+      });
+    });
+  }
+</script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCljDteMix-QtDCZQkYX-IKIYVHUam4Dus&callback=initMap"
+  async
+  defer
+></script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCljDteMix-QtDCZQkYX-IKIYVHUam4Dus&callback=initMap" async defer></script>

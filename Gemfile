@@ -87,3 +87,5 @@ gem 'dotenv-rails', :groups => [:development, :test]
 # gem 'uniquify'
 # gem 'will_paginate'
 gem "stripe"
+
+gem 'geocoder'
