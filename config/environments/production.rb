@@ -91,3 +91,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+config.x.google_maps_api_key = ENV['GOOGLE_MAPS_API_KEY']

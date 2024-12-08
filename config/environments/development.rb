@@ -62,6 +62,9 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
+  config.x.google_maps_api_key = ENV['GOOGLE_MAPS_API_KEY']
+
+
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
