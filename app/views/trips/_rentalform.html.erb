@@ -3,7 +3,7 @@
 <!-- Displays stations on the end trip page -->
 
     <div class="record-row  flexbox vertical stretch">
-        <%= station.name %> <br> Total Bikes:<%= station.docked_bikes.count%>
+        <%= station.name %> <br> Total Bikes: <%= station.docked_bikes.count%>
         <% @identifier = station.identifier %>
         
         <%= link_to update_trip_path(identifier: station.identifier) do %>
