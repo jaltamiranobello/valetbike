@@ -18,9 +18,6 @@
           <th style="padding: 12px; text-align: left;">End Station</th>
           <th style="padding: 12px; text-align: left;">Bike ID</th>
           <th style="padding: 12px; text-align: left;">Time Rented</th>
-          <!-- there is a bug i have to fix for this part
-          <th style="padding: 12px; text-align: left; border-radius: 0 8px 8px 0;">End Time</th>
-          -->
         </tr>
       </thead>
       <tbody>
@@ -31,9 +28,6 @@
             <td style="padding: 12px;"><%= trip.end_station&.name || 'In Progress' %></td>
             <td style="padding: 12px;"><%= trip.bike_used.identifier %></td>
             <td style="padding: 12px;"><%= trip.formatted_start_time %></td>
-            <!-- 
-            <td style="padding: 12px; border-radius: 0 8px 8px 0;"><%= trip.formatted_end_time || 'In Progress' %></td>
-            -->
           </tr>
         <% end %>
       </tbody>
